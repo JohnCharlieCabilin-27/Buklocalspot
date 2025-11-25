@@ -1,0 +1,173 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  background: #2c3e50;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 200ms ease, background-color 200ms ease, transform 150ms ease;
+}
+
+.nav-links li a:hover {
+  color: #1abc9c;
+  background: rgba(26,188,156,0.08);
+  transform: translateY(-2px);
+}
+
+.signin-btn {
+  background: #1abc9c;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.signin-btn:hover {
+  background: #16a085;
+}
+
+/* Sign In Form */
+.signin-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.signin-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.signin-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+}
+
+.signin-form button {
+  background: #1abc9c;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signin-form button:hover {
+  background: #16a085;
+}
+
+/* Login page reuses Sign In styles for a unified look */
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+}
+
+.login-form button {
+  background: #1abc9c;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-form button:hover {
+  background: #16a085;
+}
+
+/* Login button in navbar to match Sign In button */
+.login-btn {
+  background: #1abc9c;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background: #16a085;
+}
+
+/* Page load fade-in (CSS-only). Respects reduced-motion preference. */
+body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwards; }
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none !important; opacity: 1 !important; transform: none !important; }
+}

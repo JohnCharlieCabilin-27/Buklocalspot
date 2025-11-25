@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEDAR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+  <div class="logo">
+     <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
+     </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="About.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-switch">
+      <input type="checkbox" id="darkModeToggle">
+      <label for="darkModeToggle">🌙</label>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="https://1.bp.blogspot.com/-IdXaIaR5GXE/UTXYAW6C3bI/AAAAAAAAG5c/tmPnj1vJbMQ/s1600/IMG_4463.jpg" 
+         alt="Nasuli Cold Spring" class="featured-banner">
+    <div class="hero-content">
+      <h1>CEDAR</h1>
+      <pre>A peaceful forest escape filled with towering pines,<br> cool mountain breezes, and scenic trails that invite you to slow down, explore, and reconnect with nature.</p>
+      <a href="#main-content" class="read-more-btn">Read More</a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="container main-grid">
+    <article class="blog-post">
+      <h1 class="post-title">Cedar</h1><br>
+
+      <h4>
+       CEDAR stands for Center for Ecological Development and Recreation. 
+       The area includes a mix of natural forest and man-made forest (about 373 hectares) plus a rattan 
+       plantation (~100 hectares) and features include waterfalls, 
+       a spring-fed swimming pool, camping areas, forest trails.
+      </h4><br><br>
+
+      <h4>The site was originally a reforestation area 
+        and is managed as a protected area. According to
+         multiple sources it has been government-managed
+          since about 1912. The local government of Impasug-ong and the 
+          Department of Environment and Natural Resources (DENR)
+           collaborate to manage and develop it as an eco-tourism park.</h4><br><br>
+
+      
+      <h2><strong>LOCATION</strong></h2>
+      <p>
+        <ul style="list-style-type: square;">
+          <li><b><a href="https://www.google.com/maps/place/CEDAR/@8.2497774,125.0290546,17z/data=!3m1!4b1!4m6!3m5!1s0x32ffa579db962133:0x4d206c4d3faebaed!8m2!3d8.2497721!4d125.0316295!16s%2Fg%2F11fzwbsfby?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D">Cedar</a></b> is located at Barangay Impalutao, Impasug-ong, Bukidnon
+          Entrance is near the highway (Sayre Highway) and then a short walk from the highway into the forest trail. </li><br><br>
+        </ul>
+      </p>
+
+        <h2><strong>ACTIVITIES</strong></h2>
+      <ul style="list-style: square;">
+        <li><strong>Waterfall trekking/hopping:</strong> major waterfalls include Gantungan Falls (~720 m from entrance), 
+          Natigbasan Falls (~780 m), Dila Falls (~960 m).</li>
+        <li><strong>Swimming:</strong> there is a man-made spring-fed pool (depth ~6 ft) fed from the natural springs.</li>
+        <li><strong>Camping / nature stay:</strong> there are camping grounds under forest cover, good for overnight or multi-day nature stays.</li>
+        <li><strong>Hiking/trail walking:</strong>  through forest (man-made & natural) and along the riverbeds.</li><br><br>
+      </ul>
+
+       <h2><strong>MONETARY INFORMATION</strong></h2>
+      <ul style="list-style: square;">
+        <li><b>Entry fee</b>: One commonly cited rate is ₱20 per head</li>
+        <li><b>Additional Costs:</b>: If you opt for guide services/trails, equipment, etc., you may incur extra charges. 
+          For example one blog noted guide/entrance in associated trails at ₱300+ per group.</li>
+      </ul>
+
+    </article> 
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="widget">  
+        <img src="https://wanderingfeetph.com/wp-content/uploads/2021/11/dsc_0541.jpg?w=1024" alt="Beach view" class="medium-img hover-img">
+        <img src="https://mindtrip.ai/attractions/0c6c/4c95/50ba/d0a9/fd8d/17eb/6a34/b7d4" alt="Beach view" class="medium-img hover-img">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/22/76/d5/90/dila-falls-it-is-situated.jpg" alt="Beach view" class="medium-img hover-img">
+      </div>
+    </aside>
+  </main>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop">↑</button>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>CREATED BY | JOHN CHARLIE CABILIN</p>
+  </footer>
+
+  <script>
+    // Back to Top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Dark/Light mode toggle
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

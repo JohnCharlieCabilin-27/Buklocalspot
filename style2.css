@@ -1,0 +1,287 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Nature-inspired colors */
+:root {
+  --forest-green: #2e8b57;
+  --sky-blue: #87ceeb;
+  --earth-brown: #8b5e3c;
+  --leaf-green: #3cb371;
+  --soft-white: #f5f5f5;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: rgba(255,255,255,0.95); /* match homepage translucent header */
+  padding: 1rem 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.navbar li {
+  margin: 0 20px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #2c3e50; /* dark text like homepage */
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: color 220ms ease, background 220ms ease, transform 180ms ease;
+  will-change: transform, background-color;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: #1abc9c;
+  background: linear-gradient(90deg, rgba(26,188,156,0.10), rgba(26,188,156,0.04));
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.navbar a:active {
+  transform: translateY(0);
+}
+
+/* Sections */
+.section {
+  min-height: auto;
+  padding: 28px 18px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+.about,
+.profile,
+.contact {
+  background: transparent; /* remove colored gradients for a cleaner, consistent look */
+}
+
+/* Profile Grid */
+.profile-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 18px;
+}
+.profile-card {
+  background: var(--soft-white);
+  border-radius: 12px;
+  padding: 6px;
+  width: 200px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.22s ease;
+  background: linear-gradient(270deg, #ff6b6b, #f7b267, #6bcB77, #6b8cff);
+  background-size: 600% 600%;
+  animation: gradient-rotate 7s ease infinite;
+}
+.profile-card:hover {
+  transform: scale(1.05);
+}
+.profile-card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 5px solid #c2a76d;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  margin-bottom: 12px;
+}
+
+/* inner white panel so the gradient appears like a border */
+.profile-card .card-inner {
+  background: var(--soft-white);
+  border-radius: 12px;
+  padding: 18px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Toggle (moon + small square) for About page */
+.toggle-item { display: flex; align-items: center; }
+.toggle-switch { display: inline-flex; align-items: center; }
+.toggle-switch input { display: none; }
+.toggle-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+.toggle-label .moon { font-size: 16px; line-height: 1; }
+.toggle-label .checkbox { width: 16px; height: 16px; border: 2px solid #375e3b; border-radius: 3px; display: inline-block; position: relative; background: transparent; box-sizing: border-box; }
+input#darkModeToggleAbout:checked + .toggle-label .checkbox { background: #375e3b; border-color: #375e3b; }
+input#darkModeToggleAbout:checked + .toggle-label .checkbox::after { content: '\2713'; position: absolute; left: 1px; top: -1px; color: white; font-size: 14px; line-height: 1; }
+
+/* Dark-mode for About page — make content clearly visible */
+body.dark-mode {
+  background: #070707;
+  color: #e6e6e6;
+}
+body.dark-mode .navbar { background: #0f1112; }
+body.dark-mode .section { color: #e6e6e6; }
+body.dark-mode .about, body.dark-mode .profile, body.dark-mode .contact { background: transparent; }
+
+/* Cards and bubbles */
+body.dark-mode .card {
+  background: #0f1113;
+  color: #e6e6e6;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+}
+body.dark-mode .card h1,
+body.dark-mode .card p,
+body.dark-mode .card .muted { color: #e6e6e6; }
+
+/* Profile inner panel */
+body.dark-mode .profile-card .card-inner {
+  background: #141416;
+  color: #f3f3f3;
+  box-shadow: none;
+}
+
+/* Contact form in dark mode */
+body.dark-mode .contact-card .signin-form { background: #0b0b0c; color: #eaeaea; }
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background: #0b0b0c;
+  color: #f0f0f0;
+  border-color: #222;
+}
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder { color: rgba(255,255,255,0.5); }
+body.dark-mode form button { background: var(--leaf-green); color: #071012; }
+
+/* Links and small accents */
+body.dark-mode a { color: #9ecbff; }
+body.dark-mode .contact-info a { color: #9ecbff; }
+
+/* Toggle checkbox visibility */
+body.dark-mode .toggle-label .checkbox { border-color: #ccc; }
+
+/* Contact Form */
+form {
+  max-width: 520px;
+  margin: 12px auto 0;
+  display: flex;
+  flex-direction: column;
+}
+form input, form textarea {
+  margin: 10px 0;
+  padding: 12px;
+  border: 2px solid var(--forest-green);
+  border-radius: 5px;
+}
+form button {
+  background: var(--forest-green);
+  color: var(--soft-white);
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.22s;
+}
+form button:hover {
+  background: var(--leaf-green);
+}
+
+/* Card wrapper used by sections to create boxed bubbles */
+.card {
+  max-width: 920px;
+  margin: 8px auto 0;
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: left;
+}
+.contact-card .signin-form { background: #fafafa; padding: 14px; border-radius: 8px; }
+.contact-card h1 { margin-top: 0; margin-bottom: 8px; }
+
+/* Floating Leaves Animation */
+.leaves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.leaf {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: var(--leaf-green);
+  border-radius: 50% 50% 0 50%;
+  opacity: 0.7;
+  animation: fall 10s linear infinite;
+}
+.leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
+.leaf:nth-child(2) { left: 30%; animation-delay: 2s; }
+.leaf:nth-child(3) { left: 50%; animation-delay: 4s; }
+.leaf:nth-child(4) { left: 70%; animation-delay: 6s; }
+.leaf:nth-child(5) { left: 90%; animation-delay: 8s; }
+
+@keyframes fall {
+  0% { top: -10%; transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { top: 110%; transform: rotate(360deg); }
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background: var(--forest-green);
+  color: var(--soft-white);
+  border: none;
+  padding: 12px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 1001;
+  transition: opacity .25s ease, transform .15s ease;
+}
+#backToTop:hover { transform: translateY(-3px); opacity: 0.95; }
+
+/* Smooth scrolling and section entrance animation */
+html { scroll-behavior: smooth; }
+
+/* Prevent fixed header from overlapping anchored content */
+.section { scroll-margin-top: 90px; }
+
+/* Entry animation applied when user clicks a nav link */
+.section.animate-in {
+  animation: section-in 420ms cubic-bezier(.22,.9,.35,1);
+}
+
+@keyframes section-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Page load fade-in (CSS-only). Respects reduced-motion preference. */
+body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwards; }
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none !important; opacity: 1 !important; transform: none !important; }
+}

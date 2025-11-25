@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Communal Ranch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+  <div class="logo">
+     <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
+     </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="About.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-switch">
+      <input type="checkbox" id="darkModeToggle">
+      <label for="darkModeToggle">🌙</label>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="https://phshirt.com/wp-content/uploads/2023/05/Communal-Ranch-Impasugong-Bukidnon.jpg" 
+         alt="Nasuli Cold Spring" class="featured-banner">
+    <div class="hero-content">
+      <h1>Communal ranch</h1>
+      <pre>A wide-open countryside haven where vast green fields,<br> roaming horses, and Bukidnon’s ranch-life scenery create an authentic highland adventure.</pre>
+      <a href="#main-content" class="read-more-btn">Read More</a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="container main-grid">
+    <article class="blog-post">
+      <h1 class="post-title">Communal Ranch</h1><br>
+
+      <h4>
+       Communal Ranch is a government-owned ranch and pastoral landscape in Impasug-ong, Bukidnon, known for wide rolling pastures, pine trees, and a scenic pond that gives the area a “New-Zealand” vibe. 
+       It’s one of the largest public ranches in the Philippines and a popular photo/horseback-riding destination.
+      </h4><br><br>
+
+      <h4>The Communal Ranch is notable for being a local government-owned ranch (often described as the only LGU-owned ranch in the country). It was developed to support communal cattle grazing and agri-use while also being promoted as an eco-tourism destination for Impasug-ong. Over
+         the years it has become an attraction for visitors seeking pastureland vistas,
+          horseback riding, and rustic camping.</h4><br><br>
+
+      
+      <h2><strong>LOCATION</strong></h2>
+      <p>
+        <ul style="list-style-type: square;">
+          <li><b><a href="https://www.google.com/maps/place/Communal+Ranch/@8.3049625,125.0287656,17z/data=!3m1!4b1!4m6!3m5!1s0x32ffbb5fa5aa65e1:0x813043008b3ec503!8m2!3d8.3049625!4d125.0287656!16s%2Fg%2F11h6273rb8?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D">Communal Ranch</a></b> Barangay Capitan Bayong (Impasug-ong / Impasug-ong Communal Ranch), along Sayre Highway area of northern Bukidnon.
+          Some roads inside/near the ranch are best suited to motorcycles or 4×4 vehicles. </li><br><br>
+        </ul>
+      </p>
+
+        <h2><strong>ACTIVITIES</strong></h2>
+      <ul style="list-style: square;">
+        <li><strong>Horseback riding:</strong> across the pasturelands (signature activity; hour-long rides common).</li>
+        <li><strong>Camping / picnic:</strong> many visitors camp or bring picnic sets to enjoy the open landscape.</li>
+        <li><strong>Short hikes / nature walks:</strong> around the ranch and nearby ridgelines (check with tourism office which trails are open).</li>
+        <li><strong>Drone photography:</strong> around the ranch and nearby ridgelines (check with tourism office which trails are open).</li><br><br>
+      </ul>
+
+       <h2><strong>MONETARY INFORMATION</strong></h2>
+      <ul style="list-style: square;">
+        <li><b>Entry fee</b>: ₱50–₱70 per person (many recent guides cite ₱50 or ₱70).</li>
+        <li><b>Environmental / permit fee:</b>: ₱20 reported separately in some guides.</li>
+          <li><b>Parking</b>: ₱100–₱200 for cars, ₱100 for motorcycles in some posts.</li>
+          <li><b>Horseback riding</b>: about ₱250 per hour (common, widely reported rate). Additional photo-with-horse options or hat rentals may have small extra fees (e.g., ₱50).</li>
+      </ul>
+
+    </article> 
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="widget">  
+        <img src="https://www.escapemanila.com/wp-content/uploads/2023/09/bukidnon-communal-ranch.jpg" alt="Beach view" class="medium-img hover-img">
+        <img src="https://phshirt.com/wp-content/uploads/2023/05/Communal-Ranch-Impasugong-Bukidnon.jpg" alt="Beach view" class="medium-img hover-img">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwvnPEohiDorrc6haHKLtLUnMJBaNDtsnfan4qktSfUyPl_81N6N-49ZSf_7yASyehc5U9DynQPp4-UO_nfpm4wxZOSAEAGQzClz-_3L11Qy5CFZDwNTUAXzLeDm2QfuEG0W2wO=w408-h306-k-no" alt="Beach view" class="medium-img hover-img">
+      </div>
+    </aside>
+  </main>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop">↑</button>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>CREATED BY | JOHN CHARLIE CABILIN</p>
+  </footer>
+
+  <script>
+    // Back to Top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Dark/Light mode toggle
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
