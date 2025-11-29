@@ -199,12 +199,13 @@
             return num;
         }
 
-        // 1. Search Bar Toggle — position below header and hide on scroll
+        // 1. Search Bar Toggle & Functionality
         (function() {
             var searchIcon = document.getElementById('search-icon');
             var overlay = document.getElementById('search-overlay');
             var input = document.getElementById('search-input');
             var header = document.querySelector('.main-header');
+            var postsGrid = document.querySelector('.posts-grid');
 
             function showOverlay() {
                 // position overlay immediately below header so it doesn't get cut
@@ -218,6 +219,40 @@
                 overlay.style.display = 'none';
             }
 
+            // Search functionality
+            function performSearch(query) {
+                query = query.toLowerCase().trim();
+                const cards = postsGrid.querySelectorAll('.post-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const title = card.querySelector('.post-title').textContent.toLowerCase();
+                    const author = card.querySelector('.author').textContent.toLowerCase();
+                    
+                    if (query === '' || title.includes(query) || author.includes(query)) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show or hide "no results" message
+                let noResultsMsg = document.getElementById('no-results-message');
+                if (visibleCount === 0 && query !== '') {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.id = 'no-results-message';
+                        noResultsMsg.style.cssText = 'text-align: center; padding: 40px 20px; font-size: 1.1em; color: #888;';
+                        postsGrid.appendChild(noResultsMsg);
+                    }
+                    noResultsMsg.textContent = `No results found for "${query}". Try searching for a location, activity, or author name!`;
+                    noResultsMsg.style.display = '';
+                } else if (noResultsMsg) {
+                    noResultsMsg.style.display = 'none';
+                }
+            }
+
             if (searchIcon) {
                 searchIcon.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -225,6 +260,20 @@
                         hideOverlay();
                     } else {
                         showOverlay();
+                    }
+                });
+            }
+
+            // Search input event listener
+            if (input) {
+                input.addEventListener('input', function(e) {
+                    performSearch(e.target.value);
+                });
+
+                // Allow Enter key to close the search
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        hideOverlay();
                     }
                 });
             }

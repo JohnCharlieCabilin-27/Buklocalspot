@@ -483,3 +483,21 @@ body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwar
 @media (prefers-reduced-motion: reduce) {
     body { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
+
+/* Search Results No-Results Message */
+#no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.2em;
+    color: #888;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(155, 89, 182, 0.05));
+    border-radius: 12px;
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+body.dark-mode #no-results-message {
+    color: #aaa;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+}
