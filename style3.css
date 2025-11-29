@@ -5,6 +5,24 @@
   box-sizing: border-box;
 }
 
+.logo {
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-right: 5px;
+    border-radius: 5px; 
+    object-fit: cover; 
+    margin-top: 0px;
+}
+
+
 /* Navbar */
 .navbar {
   background: #2c3e50;

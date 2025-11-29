@@ -6,6 +6,24 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+.logo {
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-right: 5px;
+    border-radius: 5px; 
+    object-fit: cover; 
+    margin-top: 0px;
+}
+
+
 /* Nature-inspired colors */
 :root {
   --forest-green: #2e8b57;
