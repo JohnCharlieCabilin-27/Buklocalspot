@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">
       <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
@@ -16,10 +15,19 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="About.html">About</a></li>
+      
+      <li class="toggle-item">
+        <div class="toggle-switch">
+          <input type="checkbox" id="darkModeToggle">
+          <label for="darkModeToggle" class="toggle-label">
+            <span class="moon">🌙</span>
+            <span class="checkbox" aria-hidden="true"></span>
+          </label>
+        </div>
+      </li>
     </ul>
   </nav>
 
-  <!-- Login Form -->
   <section class="login-container">
     <h2>Login</h2>
     <form class="login-form">
@@ -33,5 +41,15 @@
     </form>
     <p class="signup-link">Don’t have an account? <a href="Sign up.html">Sign Up</a></p>
   </section>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('darkModeToggle');
+      if (!toggle) return;
+      toggle.addEventListener('change', function() {
+        document.body.classList.toggle('dark-mode');
+      });
+    })();
+  </script>
 </body>
 </html>

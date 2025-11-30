@@ -1,191 +1,299 @@
-/* Reset */
+/* =========================================
+   1. RESET & VARIABLES (Nature Palette)
+   ========================================= */
+:root {
+  /* Unified Nature Palette */
+  --forest-green: #2e8b57;
+  --leaf-green: #3cb371;
+  --earth-brown: #8b5e3c;
+  --sky-blue: #87ceeb;
+  --text-dark: #2c3e50;
+  --text-light: #555;
+  --background-light: #f8f9fa;
+  --border-color: #e0e0e0;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* =========================================
+   2. NAVIGATION BAR (Fixed to Top)
+   ========================================= */
+.navbar {
+  /* Forest Green Glass Background */
+  background: rgba(46, 139, 87, 0.95); 
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px; 
+  
+  /* Fixed Position */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .logo {
   display: flex;
   justify-self: space-between;
   align-items: center;
-  margin-left: 5%;
+  margin-left: 0; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .logo img {
-    height: 40px;
-    width: auto;
-    display: block;
-    margin-right: 5px;
-    border-radius: 5px; 
-    object-fit: cover; 
-    margin-top: 0px;
-}
-
-
-/* Navbar */
-.navbar {
-  background: #2c3e50;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  height: 40px;
+  width: auto;
+  display: block;
+  margin-right: 10px;
+  border-radius: 8px; 
+  object-fit: cover; 
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center; 
   gap: 20px;
 }
 
+/* --- NAVIGATION LINKS STYLING --- */
 .nav-links li a {
-  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: color 200ms ease, background-color 200ms ease, transform 150ms ease;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 25px; 
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
+/* Hover: White Bubble + Green Text */
 .nav-links li a:hover {
-  color: #1abc9c;
-  background: rgba(26,188,156,0.08);
+  color: var(--forest-green);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Growing Leaf Line Animation */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--leaf-green);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-links li a:hover::after {
+  width: 50%;
+}
+
+/* Navbar Buttons */
+.signin-btn, .login-btn {
+  background: white;
+  color: var(--forest-green) !important; 
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.signin-btn:hover, .login-btn:hover {
+  background: var(--leaf-green);
+  color: white !important;
   transform: translateY(-2px);
 }
 
-.signin-btn {
-  background: #1abc9c;
-  padding: 8px 15px;
-  border-radius: 5px;
+/* =========================================
+   3. DARK MODE TOGGLE (New)
+   ========================================= */
+.toggle-item { 
+  display: flex; 
+  align-items: center; 
+  margin-left: 10px;
+}
+.toggle-switch { display: inline-flex; align-items: center; }
+.toggle-switch input { display: none; }
+.toggle-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+
+/* Moon Icon */
+.toggle-label .moon { 
+  font-size: 18px; 
+  line-height: 1; 
+  transition: transform 0.3s ease; 
+  color: white; /* White to match green header */
+}
+.toggle-label:hover .moon { transform: rotate(15deg); }
+
+/* Checkbox Box */
+.toggle-label .checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.6); 
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Checked State */
+input#darkModeToggle:checked + .toggle-label .checkbox {
+  background: white;
+  border-color: white;
+}
+input#darkModeToggle:checked + .toggle-label .checkbox::after {
+  content: '\2713';
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  color: var(--forest-green);
+  font-size: 14px;
   font-weight: bold;
 }
 
-.signin-btn:hover {
-  background: #16a085;
-}
-
-/* Sign In Form */
-.signin-container {
+/* =========================================
+   4. FORMS (Sign In / Login)
+   ========================================= */
+   
+/* Shared Container Styles */
+.signin-container, .login-container {
   max-width: 400px;
-  margin: 80px auto;
-  padding: 30px;
-  background: #ecf0f1;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 120px auto 50px; 
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-top: 5px solid var(--forest-green); 
+  
+  opacity: 0;
+  animation: pageFadeIn 0.5s cubic-bezier(.2,.8,.2,1) 1 forwards;
 }
 
-.signin-container h2 {
+.signin-container h2, .login-container h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  margin-bottom: 25px;
+  color: var(--forest-green);
+  font-size: 1.8rem;
 }
 
-.signin-form {
+.signin-form, .login-form {
   display: flex;
   flex-direction: column;
 }
 
-.signin-form label {
-  margin-bottom: 5px;
+.signin-form label, .login-form label {
+  margin-bottom: 8px;
   font-weight: 600;
+  color: var(--text-dark);
 }
 
-.signin-form input {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #bdc3c7;
-  border-radius: 5px;
-}
-
-.signin-form button {
-  background: #1abc9c;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.signin-form button:hover {
-  background: #16a085;
-}
-
-/* Login page reuses Sign In styles for a unified look */
-.login-container {
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 30px;
-  background: #ecf0f1;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.login-container h2 {
-  text-align: center;
+.signin-form input, .login-form input {
+  padding: 12px;
   margin-bottom: 20px;
-  color: #2c3e50;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
+/* Input Focus Glow */
+.signin-form input:focus, .login-form input:focus {
+  border-color: var(--forest-green);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.1);
 }
 
-.login-form label {
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.login-form input {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #bdc3c7;
-  border-radius: 5px;
-}
-
-.login-form button {
-  background: #1abc9c;
+.signin-form button, .login-form button {
+  background: linear-gradient(135deg, var(--forest-green), var(--leaf-green));
   color: #fff;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
 }
 
-.login-form button:hover {
-  background: #16a085;
+.signin-form button:hover, .login-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 139, 87, 0.4);
+  filter: brightness(1.1);
 }
 
-/* Login button in navbar to match Sign In button */
-.login-btn {
-  background: #1abc9c;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.login-btn:hover {
-  background: #16a085;
-}
-
-/* Page load fade-in (CSS-only). Respects reduced-motion preference. */
-body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwards; }
+/* =========================================
+   5. ANIMATIONS
+   ========================================= */
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: none; }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  body { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .signin-container, .login-container { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* =========================================
+   6. DARK MODE ADJUSTMENTS
+   ========================================= */
+body.dark-mode {
+  background-color: #111;
+  color: #eee;
+}
+
+/* Navbar in Dark Mode (Slightly Darker Green) */
+body.dark-mode .navbar {
+  background: rgba(30, 90, 50, 0.95);
+}
+
+/* Form Container in Dark Mode */
+body.dark-mode .signin-container, 
+body.dark-mode .login-container {
+  background: #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-top-color: var(--leaf-green);
+}
+
+/* Text Colors */
+body.dark-mode h2 {
+  color: var(--sky-blue) !important;
+}
+
+body.dark-mode label {
+  color: #ccc;
+}
+
+/* Input Fields in Dark Mode */
+body.dark-mode input {
+  background: #222;
+  border-color: #333;
+  color: #fff;
+}
+
+body.dark-mode input:focus {
+  background: #2a2a2a;
+  border-color: var(--leaf-green);
 }
