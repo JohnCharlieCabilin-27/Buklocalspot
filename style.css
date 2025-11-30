@@ -1,4 +1,22 @@
-/* RESET */
+/* =========================================
+   1. RESET & VARIABLES (Nature Palette)
+   ========================================= */
+:root {
+  /* Unified Nature Palette */
+  --forest-green: #2e8b57;
+  --leaf-green: #3cb371;
+  --earth-brown: #8b5e3c;
+  --sky-blue: #87ceeb;
+  --text-dark: #2c3e50;
+  --text-light: #555;
+  --background-light: #f8f9fa;
+  --border-color: #e0e0e0;
+  
+  /* Shadows */
+  --shadow-light: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,156 +26,195 @@
 
 /* BODY */
 body {
-  background-color: rgb(250, 250, 250);
-  color: #333;
+  background-color: var(--background-light);
+  color: var(--text-light);
   line-height: 1.6;
+  opacity: 0; 
+  animation: pageFadeIn 0.8s cubic-bezier(.2,.8,.2,1) 1 forwards;
 }
 
-/* HEADER */
+/* =========================================
+   2. HEADER & NAVIGATION (Forest Green)
+   ========================================= */
 .site-header {
-    height: 80px;
-    display: flex;
-    align-items: center;    /* vertical center logo, nav and toggle */
-    gap: 16px;
-    padding: 6px 20px;
-    justify-content: space-between;
-    font-size: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    z-index: 50;
-    background: rgba(255,255,255,0.95); /* keep header readable */
+  /* Green Glass Background */
+  background: rgba(46, 139, 87, 0.95); 
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  
+  /* Exact size/padding from other pages */
+  padding: 15px 50px; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 50;
 }
 
 .logo {
   display: flex;
-  justify-self: space-between;
   align-items: center;
-  margin-left: 5%;
+  color: #ffffff; /* White text */
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-left: 0; /* Reset margin for cleaner align */
 }
 
 .logo img {
-    height: 40px;
-    width: auto;
-    display: block;
-    margin-right: 5px;
-    border-radius: 5px; 
-    object-fit: cover; 
-    margin-top: 0px;
+  height: 40px;
+  width: auto;
+  display: block;
+  margin-right: 10px;
+  border-radius: 8px; 
+  object-fit: cover; 
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 /* NAVIGATION */
 .nav {
-    margin-left: auto;
-    margin-right: 0;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-/* ensure nav list aligns to the right */
 .nav ul {
-    display: flex;
-    gap: 18px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    justify-content: flex-end;
-    text-align: right;
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
 }
 
 .nav li {
   margin: 0;
 }
 
+/* Nav Links (White Text) */
 .nav a {
   display: inline-block;
-  padding: 8px 12px;
-  color: #222; /* adjust color to match header theme */
+  padding: 8px 20px;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-weight: 500;
-  border-radius: 8px;
-  transition: color 220ms ease, background-color 220ms ease, transform 180ms ease;
-  will-change: transform, background-color;
+  font-weight: 600;
+  border-radius: 25px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
+/* Hover: White Bubble + Green Text */
 .nav a:hover,
 .nav a:focus {
-  color: #1abc9c;
-  background: linear-gradient(90deg, rgba(26,188,156,0.10), rgba(26,188,156,0.04));
-  transform: translateY(-3px);
+  color: var(--forest-green);
+  background-color: #ffffff;
+  transform: translateY(-2px);
   outline: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .nav a:active {
   transform: translateY(0);
 }
 
-/* HERO SECTION */
+/* Growing Leaf Line Animation */
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--leaf-green);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav a:hover::after {
+  width: 50%;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
 .hero {
-    position: relative;
-    height: 60vh;
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-color: #000; /* fallback while image loads */
+  position: relative;
+  height: 60vh;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
 }
 
 .featured-banner {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;       /* crop while preserving aspect ratio */
-    object-position: center; /* center the focal point */
-    display: block;
-    filter: brightness(1.06) contrast(1.08) saturate(1.05);
-    transform: scale(1.02);  /* slight upscale to avoid thin edges when centering */
-    z-index: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(1.06) contrast(1.08) saturate(1.05);
+  transform: scale(1.02);
+  z-index: 0;
 }
 
-/* Optional reduced dark overlay so image is clearer — lower alpha to make image brighter */
 .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.18); /* reduce or set to 0 to remove overlay entirely */
-    z-index: 1;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* Slightly darker for text legibility */
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* Keep hero text above image/overlay and center it */
 .hero .hero-content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    padding: 18px;
-    max-width: 1100px;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  max-width: 1100px;
 }
 
-/* Improve heading readability on lighter images */
 .hero .hero-content h1 {
-    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
-    margin: 0 0 10px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  margin: 0 0 10px;
+  font-size: 2.5rem;
 }
 
 .hero-content p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* Read more button visibility */
 .read-more-btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 16px;
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
 }
 
-/* CONTAINER */
+.read-more-btn:hover {
+  background: white;
+  color: var(--forest-green);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   4. MAIN CONTENT LAYOUT
+   ========================================= */
 .container {
   width: 90%;
   margin: auto;
@@ -171,46 +228,48 @@ body {
   margin-top: 3rem;
 }
 
-/* BLOG POST */
+/* BLOG POST CARD */
 .blog-post {
   background: white;
   padding: 2rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  
-
+  border-radius: 16px; /* Rounded corners match other pages */
+  box-shadow: var(--shadow-light);
+  border-top: 5px solid var(--forest-green);
 }
 
 .post-title {
   font-size: 1.8rem;
-  color: #088da8;
+  color: var(--forest-green);
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 /* IMAGES */
 .hover-img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .hover-img:hover {
   transform: scale(1.02);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-hover);
 }
 
 /* SIDEBAR */
 .sidebar {
   background: white;
   padding: 1.5rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 130%;
-  height: 100%;
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  height: fit-content;
+  width: 100%; /* Reset width to fit grid */
 }
 
+/* Sidebar Widgets */
 .widget h3 {
   text-align: center;
-  background: linear-gradient(90deg, #00c6ff, #007a91);
+  /* UPDATED: Green Gradient */
+  background: linear-gradient(90deg, var(--leaf-green), var(--forest-green));
   color: white;
   padding: 10px 0;
   border-radius: 8px;
@@ -225,121 +284,76 @@ body {
   border-radius: 10px;
 }
 
+/* =========================================
+   5. FOOTER & EXTRAS
+   ========================================= */
+.site-footer {
+  background: var(--forest-green);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
 /* BACK TO TOP BUTTON */
 #backToTop {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #007a91;
+  bottom: 30px;
+  right: 30px;
+  background: var(--forest-green);
   color: white;
-  border: none;
-  padding: 12px 18px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  border: none;
   cursor: pointer;
-  display: none;
-  font-size: 18px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s;
+  display: none; /* JS toggles this */
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2000;
+  transition: all 0.3s ease;
 }
 
 #backToTop:hover {
-  background: #00c6ff;
+  background: var(--leaf-green);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* FOOTER */
-.site-footer {
-  background: #007a91;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 3rem;
-}
-
-/* DARK MODE */
-body.dark-mode {
-  background: #121212;
-  color: #ddd;
-}
-
-body.dark-mode .site-header,
-body.dark-mode .site-footer {
-  background: #1c1c1c;
-}
-
-body.dark-mode .blog-post,
-body.dark-mode .sidebar {
-  background: #1e1e1e;
-  color: #f0f0f0;
-}
-
-/* TOGGLE SWITCH */
+/* TOGGLE SWITCH (Positioning) */
 .toggle-switch {
   position: relative;
-  top: 0;
-  right: 0;
-  margin-left: 12px;
+  margin-left: 15px;
 }
 
 .toggle-switch label {
   cursor: pointer;
   font-size: 1.5rem;
+  color: white; /* Make toggle icon white on green header */
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .main-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-    .site-header { height: 48px; padding: 6px 12px; }
-    .site-header .logo img { height: 32px; }
-    .hero { height: 45vh; min-height: 220px; }
-    .hero .hero-content h1 { font-size: 1.4rem; }
-}
-
-/* Small screen: stack or collapse more compactly */
-@media (max-width: 640px) {
-    .nav ul {
-        gap: 10px;
-    }
-    .nav a {
-        padding: 6px 8px;
-        font-size: 14px;
-    }
-}
-
-/* Optional: ensure backToTop button hidden by default until JS shows it */
-#backToTop { display: none; }
-
-/* Page load fade-in (CSS-only). Respects reduced-motion preference. */
-body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwards; }
-@keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  body { animation: none !important; opacity: 1 !important; transform: none !important; }
-}
-
-/* EMBEDDED CONTENT SECTION STYLES */
+/* =========================================
+   6. EMBEDDED CONTENT
+   ========================================= */
 .embedded-content-section {
   grid-column: 1 / -1;
   margin-top: 40px;
   padding: 30px;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
   border-radius: 12px;
-  border-left: 5px solid #3498db;
+  /* Updated to Green */
+  border-left: 5px solid var(--forest-green);
 }
 
 .embedded-content-section h2 {
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: var(--text-dark);
   font-size: 1.5em;
 }
 
-/* External Links Grid - Clickable Images */
+/* External Links Grid */
 .external-links-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -353,7 +367,7 @@ body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwar
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-light);
   text-decoration: none;
   display: block;
   height: 200px;
@@ -361,7 +375,7 @@ body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwar
 
 .external-link-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-hover);
 }
 
 .external-link-card img {
@@ -385,7 +399,7 @@ body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwar
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(46, 139, 87, 0.7); /* Green overlay */
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -398,6 +412,7 @@ body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwar
   font-size: 2.5em;
   margin-bottom: 8px;
   display: block;
+  color: white;
 }
 
 .link-overlay p {
@@ -412,10 +427,33 @@ body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwar
   text-align: center;
 }
 
-/* Dark Mode Support for Embedded Content */
+/* =========================================
+   7. DARK MODE
+   ========================================= */
+body.dark-mode {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark-mode .site-header {
+  background: rgba(30, 90, 50, 0.95); /* Darker green */
+}
+
+body.dark-mode .site-footer {
+  background: #1c1c1c;
+}
+
+body.dark-mode .blog-post,
+body.dark-mode .sidebar {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: none;
+}
+
+/* Embeds in Dark Mode */
 body.dark-mode .embedded-content-section {
   background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-  border-left-color: #3498db;
+  border-left-color: var(--leaf-green);
 }
 
 body.dark-mode .embedded-content-section h2 {
@@ -432,4 +470,35 @@ body.dark-mode .external-link-card:hover {
 
 body.dark-mode .external-links-help {
   color: #b0b0b0;
+}
+
+/* =========================================
+   8. ANIMATIONS & RESPONSIVE
+   ========================================= */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .site-header { padding: 10px 20px; }
+  .site-header .logo img { height: 32px; }
+  .hero { height: 45vh; min-height: 220px; }
+  .hero .hero-content h1 { font-size: 1.8rem; }
+}
+
+@media (max-width: 640px) {
+  .nav ul { gap: 10px; }
+  .nav a { padding: 6px 12px; font-size: 14px; }
 }

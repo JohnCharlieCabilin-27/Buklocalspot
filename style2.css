@@ -38,18 +38,22 @@ html { scroll-behavior: smooth; }
 }
 
 /* =========================================
-   2. NAVIGATION BAR (Glassmorphism Fixed)
+   2. NAVIGATION BAR (Forest Green - Same Size)
    ========================================= */
 .navbar {
-  /* Updated to the cleaner "Green" version from your error log */
-  background: rgba(255, 255, 255, 0.85); 
-  backdrop-filter: blur(10px); /* Blurry glass effect */
-  padding: 1rem 20px;
+  /* Green Glass Background */
+  background: rgba(46, 139, 87, 0.95); 
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  
+  /* Exact padding from Home Page */
+  padding: 15px 50px; 
+  
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
 
@@ -62,9 +66,10 @@ html { scroll-behavior: smooth; }
   margin: 0 15px;
 }
 
+/* Links (White Text) */
 .navbar a {
   text-decoration: none;
-  color: #2c3e50;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 700;
   padding: 8px 16px;
   border-radius: 20px; 
@@ -72,13 +77,14 @@ html { scroll-behavior: smooth; }
   transition: all 0.3s ease;
 }
 
-/* Nav Hover: Text Green + Bubble + Growing Leaf Line */
+/* Hover: White Bubble + Green Text */
 .navbar a:hover,
 .navbar a:focus {
   color: var(--forest-green);
-  background-color: rgba(46, 139, 87, 0.08); 
+  background-color: #ffffff; 
   transform: translateY(-2px); 
   outline: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .navbar a::after {
@@ -88,7 +94,7 @@ html { scroll-behavior: smooth; }
   height: 3px;
   bottom: 6px;
   left: 50%;
-  background-color: var(--forest-green);
+  background-color: var(--leaf-green);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
   transform: translateX(-50%); 
   border-radius: 2px;
@@ -96,6 +102,39 @@ html { scroll-behavior: smooth; }
 
 .navbar a:hover::after {
   width: 50%; 
+}
+
+/* Dark Mode Toggle (Adapted for Green Header) */
+.toggle-item { display: flex; align-items: center; }
+.toggle-switch { display: inline-flex; align-items: center; }
+.toggle-switch input { display: none; }
+.toggle-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+
+.toggle-label .moon { font-size: 18px; line-height: 1; transition: transform 0.3s ease; color: white; }
+.toggle-label:hover .moon { transform: rotate(15deg); }
+
+.toggle-label .checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.6); 
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+input#darkModeToggleAbout:checked + .toggle-label .checkbox {
+  background: white;
+  border-color: white;
+}
+input#darkModeToggleAbout:checked + .toggle-label .checkbox::after {
+  content: '\2713';
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  color: var(--forest-green);
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* =========================================
@@ -127,8 +166,6 @@ html { scroll-behavior: smooth; }
   
   background: #ffffff;
   border-radius: 16px; 
-  
-  /* Top accent border */
   border-top: 5px solid var(--forest-green); 
   
   box-shadow: var(--shadow-light);
@@ -136,7 +173,6 @@ html { scroll-behavior: smooth; }
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Hover Effect for the Text Box */
 .card:hover {
   transform: translateY(-5px); 
   box-shadow: var(--shadow-hover);
@@ -163,14 +199,13 @@ html { scroll-behavior: smooth; }
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 30px;
-  row-gap: 180px; /* Space for the floating heads */
+  row-gap: 180px; 
   margin-top: 180px; 
 }
 
-/* The Card Wrapper (Box) */
 .profile-card {
   border-radius: 16px;
-  padding: 4px; /* Slight padding for gradient border */
+  padding: 4px; 
   width: 240px; 
   position: relative;
   overflow: visible; 
@@ -180,14 +215,12 @@ html { scroll-behavior: smooth; }
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Hover Effect: Whole card lifts */
 .profile-card:hover {
   transform: translateY(-10px) scale(1.02);
   z-index: 20;
   box-shadow: var(--shadow-hover);
 }
 
-/* The Profile Image (Floating Head) */
 .profile-card img {
   width: 150px;
   height: 150px;
@@ -196,28 +229,21 @@ html { scroll-behavior: smooth; }
   border-width: 8px; 
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   
-  /* Positioning */
   position: absolute;
   top: -165px;
   left: 50%;
-  
-  /* Initial Transform (Centered) */
   transform: translateX(-50%); 
   
   z-index: 10;
   transition: transform 0.4s ease, border-color 0.4s ease;
-  
-  /* Floating Animation (Bobbing up and down) */
   animation: floatHead 3s ease-in-out infinite;
 }
 
-/* Stop bobbing and zoom in on hover */
 .profile-card:hover img {
   animation-play-state: paused;
   transform: translateX(-50%) scale(1.1); 
 }
 
-/* The Text Container */
 .profile-card .card-inner {
   background: #ffffff;
   border-radius: 14px;
@@ -266,18 +292,16 @@ form {
   flex-direction: column;
 }
 
-/* Inputs & Textarea */
 form input, form textarea {
   margin: 12px 0;
   padding: 15px;
-  border: 2px solid #ddd; /* Light grey default */
+  border: 2px solid #ddd; 
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
   background: #fafafa;
 }
 
-/* Input Focus Effect: Glows Green */
 form input:focus, form textarea:focus {
   border-color: var(--forest-green);
   background: #fff;
@@ -286,7 +310,6 @@ form input:focus, form textarea:focus {
   transform: scale(1.01);
 }
 
-/* Submit Button */
 form button {
   margin-top: 10px;
   background: linear-gradient(135deg, var(--forest-green), var(--leaf-green));
@@ -301,7 +324,6 @@ form button {
   transition: all 0.3s ease;
 }
 
-/* Button Hover: Scale & Brighten */
 form button:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
@@ -315,22 +337,18 @@ form button:active {
 /* =========================================
    7. ANIMATIONS
    ========================================= */
-
-/* Floating Head Bobbing */
 @keyframes floatHead {
   0%   { transform: translateX(-50%) translateY(0px); }
   50%  { transform: translateX(-50%) translateY(-10px); }
   100% { transform: translateX(-50%) translateY(0px); }
 }
 
-/* Rotating Gradient Border */
 @keyframes gradient-rotate {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Falling Leaves (Background) */
 .leaves {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -346,7 +364,7 @@ form button:active {
   opacity: 0.6;
   animation: fall 12s linear infinite;
 }
-/* Randomize leaves slightly */
+
 .leaf:nth-child(1) { left: 10%; animation-delay: 0s; background: #8fce00; }
 .leaf:nth-child(2) { left: 30%; animation-delay: 2s; background: #2e8b57; }
 .leaf:nth-child(3) { left: 50%; animation-delay: 4s; background: #3cb371; }
@@ -359,7 +377,6 @@ form button:active {
   100% { top: 110%; transform: rotate(560deg); opacity: 0; }
 }
 
-/* Entrance Animation for Sections */
 .section {
   animation: fadeUp 0.8s ease-out forwards;
   opacity: 0;
@@ -378,7 +395,8 @@ body.dark-mode {
   color: #eee;
 }
 body.dark-mode .navbar {
-  background: rgba(20, 20, 20, 0.9);
+  /* Slightly darker green for dark mode */
+  background: rgba(30, 90, 50, 0.95);
 }
 body.dark-mode .navbar a { color: #eee; }
 body.dark-mode .navbar a:hover { color: var(--leaf-green); }
@@ -422,17 +440,16 @@ body.dark-mode form textarea:focus {
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  /* Note: JavaScript is required to toggle this from 'none' to 'flex' */
+  /* JavaScript required to toggle this from 'none' to 'flex' */
   display: none; 
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 24px; 
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   z-index: 2000;
   transition: all 0.3s ease;
 }
 
-/* Hover Effect: Lift and brighten */
 #backToTop:hover {
   background: var(--leaf-green);
   transform: translateY(-5px);
