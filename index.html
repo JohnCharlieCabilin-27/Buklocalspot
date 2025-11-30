@@ -191,7 +191,7 @@
     </main>
 
     <script>
-        // Function to format numbers for display (e.g., 4500 -> 4.5K)
+        // Helper: Format numbers (e.g., 4500 -> 4.5K)
         function formatCount(num) {
             if (num >= 1000) {
                 return (num / 1000).toFixed(1) + 'K';
@@ -199,7 +199,7 @@
             return num;
         }
 
-        // 1. Search Bar Toggle & Functionality
+        // 1. Search Bar Functionality
         (function() {
             var searchIcon = document.getElementById('search-icon');
             var overlay = document.getElementById('search-overlay');
@@ -218,7 +218,6 @@
                 overlay.style.display = 'none';
             }
 
-            // Search functionality
             function performSearch(query) {
                 query = query.toLowerCase().trim();
                 const cards = postsGrid.querySelectorAll('.post-card');
@@ -236,7 +235,6 @@
                     }
                 });
 
-                // Show or hide "no results" message
                 let noResultsMsg = document.getElementById('no-results-message');
                 if (visibleCount === 0 && query !== '') {
                     if (!noResultsMsg) {
@@ -245,7 +243,7 @@
                         noResultsMsg.style.cssText = 'text-align: center; padding: 40px 20px; font-size: 1.1em; color: #888;';
                         postsGrid.appendChild(noResultsMsg);
                     }
-                    noResultsMsg.textContent = `No results found for "${query}". Try searching for a location, activity, or author name!`;
+                    noResultsMsg.textContent = `No results found for "${query}". Try searching for a location or author!`;
                     noResultsMsg.style.display = '';
                 } else if (noResultsMsg) {
                     noResultsMsg.style.display = 'none';
@@ -255,11 +253,8 @@
             if (searchIcon) {
                 searchIcon.addEventListener('click', function(e) {
                     e.preventDefault();
-                    if (overlay.style.display === 'flex') {
-                        hideOverlay();
-                    } else {
-                        showOverlay();
-                    }
+                    if (overlay.style.display === 'flex') hideOverlay();
+                    else showOverlay();
                 });
             }
 
@@ -267,22 +262,17 @@
                 input.addEventListener('input', function(e) {
                     performSearch(e.target.value);
                 });
-
                 input.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape') {
-                        hideOverlay();
-                    }
+                    if (e.key === 'Escape') hideOverlay();
                 });
             }
 
             window.addEventListener('scroll', function() {
-                if (overlay.style.display === 'flex') {
-                    hideOverlay();
-                }
+                if (overlay.style.display === 'flex') hideOverlay();
             }, { passive: true });
         })();
 
-        // 2. Prevent Page Jump for main nav links
+        // 2. Prevent Page Jump
         document.querySelectorAll('.main-nav a').forEach(link => {
             if (link.getAttribute('href').startsWith('#') && link.id !== 'search-icon') {
                 link.addEventListener('click', function(e) {
@@ -291,33 +281,52 @@
             }
         });
 
-        // 3. UPDATED: Heart Reaction (Undo/Like) Handler
-        // This version allows toggling and updates the CSS class properly
-        document.querySelectorAll('.heart-button').forEach(button => {
-            const countSpan = button.querySelector('.reaction-count');
-            // Get the original number from the HTML attribute
+        // 3. PERSISTENT HEART BUTTONS (Saves to Browser Storage)
+        document.querySelectorAll('.post-card').forEach(card => {
+            // Find elements within the card
+            const button = card.querySelector('.heart-button');
+            const countSpan = card.querySelector('.reaction-count');
+            const title = card.querySelector('.post-title').textContent.trim(); // Unique Key
+            
+            // Initial Data
             const initialCount = parseInt(countSpan.getAttribute('data-initial'));
-            let isLiked = false;
+            
+            // Create a unique key for LocalStorage based on the post title
+            // Removes spaces to make a clean ID, e.g., "liked_Nasuli_..."
+            const storageKey = 'liked_' + title.replace(/\s+/g, '_');
 
+            // Check if user previously liked this specific post
+            const isSaved = localStorage.getItem(storageKey) === 'true';
+            let isLiked = isSaved;
+
+            // --- ON LOAD: Set Initial State ---
+            if (isLiked) {
+                button.classList.add('liked');
+                countSpan.textContent = formatCount(initialCount + 1);
+            } else {
+                button.classList.remove('liked');
+                countSpan.textContent = formatCount(initialCount);
+            }
+
+            // --- ON CLICK: Toggle State & Save ---
             button.addEventListener('click', function() {
-                // 1. Toggle the logic state
-                isLiked = !isLiked;
+                isLiked = !isLiked; // Flip state
 
-                // 2. Toggle the CSS class (This turns the heart red via your new CSS)
-                this.classList.toggle('liked');
-
-                // 3. Update the Number display
                 if (isLiked) {
-                    // Add 1 to the original count
+                    // LIKE IT
+                    button.classList.add('liked');
                     countSpan.textContent = formatCount(initialCount + 1);
+                    localStorage.setItem(storageKey, 'true'); // Save to storage
                 } else {
-                    // Revert to the original count (Undo)
+                    // UNDO LIKE
+                    button.classList.remove('liked');
                     countSpan.textContent = formatCount(initialCount);
+                    localStorage.removeItem(storageKey); // Remove from storage
                 }
             });
         });
 
-        // 4. Dark/Light mode toggle
+        // 4. Dark Mode Toggle
         (function() {
             var toggle = document.getElementById('darkModeToggle');
             if (!toggle) return;
