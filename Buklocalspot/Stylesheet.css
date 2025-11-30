@@ -1,0 +1,503 @@
+/* GENERAL STYLES & RESET */
+:root {
+    --primary-color: #007bff; 
+    --text-dark: #2c3e50;
+    --text-light: #555;
+    --background-light: #f8f9fa;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.3s;
+    cursor: pointer; 
+}
+
+a:hover {
+    color: var(--text-dark);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: white;
+    position: relative; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.logo img {
+    width: 40px; 
+    height: 40px; 
+    margin-right: 10px;
+    border-radius: 5px; 
+    object-fit: cover; 
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 0.9em;
+    position: relative;
+}
+
+.main-nav ul li a {
+    color: var(--text-light);
+    padding: 8px 12px;
+    display: block;
+    border-radius: 8px;
+    transition: color 220ms ease, background-color 220ms ease, transform 200ms ease;
+    will-change: transform, background-color;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+    color: var(--text-dark);
+    background: linear-gradient(90deg, rgba(26,188,156,0.10), rgba(26,188,156,0.04));
+    transform: translateY(-3px);
+    outline: none;
+}
+
+.main-nav ul li a:active {
+    transform: translateY(0);
+}
+
+/* Dropdown Menu Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    padding: 10px 0;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text-dark);
+    padding: 8px 16px;
+    display: block;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+/* Toggle switch styling (small moon icon) */
+/* Toggle (moon + small square checkbox) placed inline with nav */
+.toggle-item { display: flex; align-items: center; }
+.toggle-switch { display: inline-flex; align-items: center; }
+.toggle-switch input { display: none; }
+.toggle-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+.toggle-label .moon { font-size: 16px; line-height: 1; }
+
+/* small square box next to moon that shows a check when enabled */
+.toggle-label .checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #555;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+/* when the hidden checkbox is checked, show a white checkmark inside the small box */
+input#darkModeToggle:checked + .toggle-label .checkbox {
+    background: #2c3e50;
+    border-color: #2c3e50;
+}
+input#darkModeToggle:checked + .toggle-label .checkbox::after {
+    content: '\2713'; /* check mark */
+    position: absolute;
+    left: 2px;
+    top: -2px;
+    color: white;
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* DARK MODE overrides */
+
+/* Stronger dark-mode rules: make text visible (white) and adjust backgrounds */
+body.dark-mode {
+    background-color: #0f0f10;
+    color: #ffffff;
+}
+
+/* make almost all textual content white for visibility in dark mode */
+body.dark-mode * {
+    color: #ffffff !important;
+}
+
+body.dark-mode .main-header {
+    background-color: #111213 !important;
+}
+
+body.dark-mode .latest-news {
+    box-shadow: none;
+    background-image: none;
+    background-color: #161618;
+}
+
+body.dark-mode .post-card,
+body.dark-mode .posts-grid .post-card,
+body.dark-mode .blog-post,
+body.dark-mode .sidebar {
+    background: #171717 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+}
+
+body.dark-mode .share-info {
+    background: #1f1f1f !important;
+    border-color: #2b2b2b !important;
+}
+
+body.dark-mode a { color: #9ecbff !important; }
+
+/* Keep heart icons red even when dark mode applies global white color */
+body.dark-mode .share-info .fas.fa-heart {
+    color: #e74c3c !important;
+    text-shadow: 0 0 6px rgba(231,76,60,0.25);
+}
+
+/* Search overlay dark-mode styles */
+body.dark-mode .search-overlay {
+    background-color: #111314 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+}
+body.dark-mode .search-box {
+    border-color: #2b2b2b !important;
+    background: #151515 !important;
+}
+body.dark-mode #search-input {
+    color: #fff !important;
+}
+
+
+/* --- SEPARATOR LINE --- */
+.divider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0 50px 40px;
+}
+
+/* --- LATEST NEWS HEADLINE SECTION (UPDATED FOR NEW BACKGROUND IMAGE) --- */
+.latest-news {
+    margin-bottom: 50px;
+    padding: 50px 10px 50px 10px; 
+    
+    /* NEW: Apply the clearer background image */
+    background-image: url('https://t3.ftcdn.net/jpg/02/46/60/52/360_F_246605213_piLDt8tagYdFLGj6x3L5JgpKaxOdT7d8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.latest-news h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: white; 
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+}
+
+.title-line {
+    width: 250px;
+    border: none;
+    border-top: 3px solid white; 
+    margin: 5px 0 15px;
+}
+
+.subtitle {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #ddd; 
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+}
+
+/* --- POSTS GRID STRUCTURE --- */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+}
+
+/* --- POST CARD STYLES --- */
+.post-card {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.post-image {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.post-image img {
+    width: 100%;
+    height: 200px; 
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    object-fit: cover; 
+}
+
+.post-card:hover .post-image img {
+    transform: scale(1.05);
+}
+
+.post-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.post-meta {
+    font-size: 0.75em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.post-meta .author {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.post-excerpt {
+    font-size: 0.85em;
+    color: var(--text-light);
+}
+
+.share-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer; 
+}
+
+.share-info .fas.fa-heart {
+    color: #e74c3c;
+    margin-right: 5px;
+    transition: all 0.2s ease-in-out; 
+}
+
+.share-info span {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+
+/* --- SEARCH OVERLAY STYLES (CENTERED & COLORFUL) --- */
+
+.search-overlay {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 8px 0; /* allow vertical breathing space so oval doesn't clip */
+    background: transparent; /* make overlay transparent; search-box provides visible background */
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* default to avoid intercepting clicks when hidden */
+}
+
+.search-overlay[style*="display: flex"] {
+    pointer-events: auto; /* enable interactions when visible */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 78%;
+    max-width: 980px;
+    height: 56px;
+    border-radius: 999px; /* perfect oval */
+    padding: 6px 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    background: white;
+    border: 1px solid #3498db;
+}
+
+#search-input {
+    flex: 1;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    caret-color: #007a91; /* visible caret in light mode */
+}
+
+#search-input::placeholder {
+    color: #9aa8b2;
+}
+
+/* Dark-mode adjustments for visibility inside the oval */
+body.dark-mode .search-box {
+    background: #121213 !important;
+    border-color: #2b2b2b !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5) !important;
+}
+
+body.dark-mode #search-input {
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+}
+
+body.dark-mode #search-input::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: #e74c3c; 
+    font-size: 1.5em;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.search-box button:hover {
+    color: #c0392b; 
+}
+
+/* Ensure the divider line is not visible when the search bar is up */
+.search-overlay + .divider {
+    display: none;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 1200px) {
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 850px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .search-box {
+        width: 85%;
+    }
+}
+
+@media (max-width: 550px) {
+    .main-header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .latest-news {
+        padding: 40px 15px;
+    }
+
+    .latest-news h1 {
+        font-size: 2em;
+    }
+}
+
+/* Page load fade-in (CSS-only). Respects reduced-motion preference. */
+body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwards; }
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    body { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Search Results No-Results Message */
+#no-results-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.2em;
+    color: #888;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(155, 89, 182, 0.05));
+    border-radius: 12px;
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+body.dark-mode #no-results-message {
+    color: #aaa;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+}
