@@ -208,7 +208,6 @@
             var postsGrid = document.querySelector('.posts-grid');
 
             function showOverlay() {
-                // position overlay immediately below header so it doesn't get cut
                 var headerH = header ? header.offsetHeight : 70;
                 overlay.style.top = headerH + 'px';
                 overlay.style.display = 'flex';
@@ -264,13 +263,11 @@
                 });
             }
 
-            // Search input event listener
             if (input) {
                 input.addEventListener('input', function(e) {
                     performSearch(e.target.value);
                 });
 
-                // Allow Enter key to close the search
                 input.addEventListener('keydown', function(e) {
                     if (e.key === 'Escape') {
                         hideOverlay();
@@ -278,23 +275,14 @@
                 });
             }
 
-            // Hide overlay when user scrolls so it doesn't linger and cut into the header
-            var scrollingTimeout;
             window.addEventListener('scroll', function() {
                 if (overlay.style.display === 'flex') {
-                    // hide immediately
                     hideOverlay();
                 }
-                // optional: if overlay open and user scrolls, ensure it is closed
-                // if you prefer a delayed hide, uncomment a delayed approach
-                clearTimeout(scrollingTimeout);
-                scrollingTimeout = setTimeout(function() {
-                    // nothing for now — placeholder if we change behavior later
-                }, 200);
             }, { passive: true });
         })();
 
-        // 2. Prevent Page Jump for all main nav links
+        // 2. Prevent Page Jump for main nav links
         document.querySelectorAll('.main-nav a').forEach(link => {
             if (link.getAttribute('href').startsWith('#') && link.id !== 'search-icon') {
                 link.addEventListener('click', function(e) {
@@ -303,49 +291,40 @@
             }
         });
 
-        // 3. Heart Reaction Click Handler
+        // 3. UPDATED: Heart Reaction (Undo/Like) Handler
+        // This version allows toggling and updates the CSS class properly
         document.querySelectorAll('.heart-button').forEach(button => {
-            let isLiked = false;
-            
-            // Get the initial count from the data attribute
             const countSpan = button.querySelector('.reaction-count');
-            let count = parseInt(countSpan.getAttribute('data-initial'));
-            const heartIcon = button.querySelector('.fas.fa-heart');
+            // Get the original number from the HTML attribute
+            const initialCount = parseInt(countSpan.getAttribute('data-initial'));
+            let isLiked = false;
 
             button.addEventListener('click', function() {
-                if (!isLiked) {
-                    // Like the post
-                    count += 1;
-                    isLiked = true;
-                    // Change heart color for visual feedback
-                    heartIcon.style.color = 'red'; 
-                    heartIcon.style.transform = 'scale(1.1)';
+                // 1. Toggle the logic state
+                isLiked = !isLiked;
+
+                // 2. Toggle the CSS class (This turns the heart red via your new CSS)
+                this.classList.toggle('liked');
+
+                // 3. Update the Number display
+                if (isLiked) {
+                    // Add 1 to the original count
+                    countSpan.textContent = formatCount(initialCount + 1);
                 } else {
-                    // Unlike the post
-                    count -= 1;
-                    isLiked = false;
-                    // Reset heart color (back to the CSS default red)
-                    heartIcon.style.color = '#e74c3c'; 
-                    heartIcon.style.transform = 'scale(1)';
+                    // Revert to the original count (Undo)
+                    countSpan.textContent = formatCount(initialCount);
                 }
-                
-                // Update the visible count
-                countSpan.textContent = formatCount(count);
-            });
-            // Optional: Add a subtle hover effect back to the icon when liked
-            heartIcon.addEventListener('transitionend', function() {
-                heartIcon.style.transform = 'scale(1)';
             });
         });
 
-            // Dark/Light mode toggle (header)
-            (function() {
-                var toggle = document.getElementById('darkModeToggle');
-                if (!toggle) return;
-                toggle.addEventListener('change', function() {
-                    document.body.classList.toggle('dark-mode');
-                });
-            })();
+        // 4. Dark/Light mode toggle
+        (function() {
+            var toggle = document.getElementById('darkModeToggle');
+            if (!toggle) return;
+            toggle.addEventListener('change', function() {
+                document.body.classList.toggle('dark-mode');
+            });
+        })();
     </script>
     
 </body>
