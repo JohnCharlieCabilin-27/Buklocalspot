@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+/* Reset */
+=======
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 /* =========================================
    1. RESET & VARIABLES (Nature Palette)
    ========================================= */
@@ -13,10 +19,19 @@
   --border-color: #e0e0e0;
 }
 
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -42,12 +57,17 @@
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .logo {
   display: flex;
   justify-self: space-between;
   align-items: center;
+<<<<<<< HEAD
   margin-left: 0; 
   font-size: 1.5rem;
   font-weight: bold;
@@ -55,6 +75,44 @@
 }
 
 .logo img {
+=======
+<<<<<<< HEAD
+  margin-left: 5%;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-right: 5px;
+    border-radius: 5px; 
+    object-fit: cover; 
+    margin-top: 0px;
+}
+
+
+/* Navbar */
+.navbar {
+  background: #2c3e50;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+=======
+  margin-left: 0; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.logo img {
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   height: 40px;
   width: auto;
   display: block;
@@ -62,11 +120,155 @@
   border-radius: 8px; 
   object-fit: cover; 
   border: 1px solid rgba(255,255,255,0.3);
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .nav-links {
   list-style: none;
   display: flex;
+<<<<<<< HEAD
+  align-items: center; 
+=======
+<<<<<<< HEAD
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+  gap: 20px;
+}
+
+/* --- NAVIGATION LINKS STYLING --- */
+.nav-links li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 25px; 
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover: White Bubble + Green Text */
+.nav-links li a:hover {
+  color: var(--forest-green);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Growing Leaf Line Animation */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--leaf-green);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-links li a:hover::after {
+  width: 50%;
+}
+
+/* Navbar Buttons */
+.signin-btn, .login-btn {
+  background: white;
+  color: var(--forest-green) !important; 
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.signin-btn:hover, .login-btn:hover {
+  background: var(--leaf-green);
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   3. DARK MODE TOGGLE (New)
+   ========================================= */
+.toggle-item { 
+  display: flex; 
+  align-items: center; 
+  margin-left: 10px;
+}
+.toggle-switch { display: inline-flex; align-items: center; }
+.toggle-switch input { display: none; }
+.toggle-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+
+/* Moon Icon */
+.toggle-label .moon { 
+  font-size: 18px; 
+  line-height: 1; 
+  transition: transform 0.3s ease; 
+  color: white; /* White to match green header */
+}
+.toggle-label:hover .moon { transform: rotate(15deg); }
+
+/* Checkbox Box */
+.toggle-label .checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.6); 
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Checked State */
+input#darkModeToggle:checked + .toggle-label .checkbox {
+  background: white;
+  border-color: white;
+}
+input#darkModeToggle:checked + .toggle-label .checkbox::after {
+  content: '\2713';
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  color: var(--forest-green);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* =========================================
+   4. FORMS (Sign In / Login)
+   ========================================= */
+   
+/* Shared Container Styles */
+.signin-container, .login-container {
+  max-width: 400px;
+  margin: 120px auto 50px; 
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-top: 5px solid var(--forest-green); 
+  
+  opacity: 0;
+  animation: pageFadeIn 0.5s cubic-bezier(.2,.8,.2,1) 1 forwards;
+}
+
+.signin-container h2, .login-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--forest-green);
+  font-size: 1.8rem;
+}
+
+<<<<<<< HEAD
+.signin-form, .login-form {
+=======
+.signin-form {
+=======
   align-items: center; 
   gap: 20px;
 }
@@ -199,10 +401,72 @@ input#darkModeToggle:checked + .toggle-label .checkbox::after {
 }
 
 .signin-form, .login-form {
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   display: flex;
   flex-direction: column;
 }
 
+<<<<<<< HEAD
+.signin-form label, .login-form label {
+  margin-bottom: 8px;
+=======
+<<<<<<< HEAD
+.signin-form label {
+  margin-bottom: 5px;
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.signin-form input, .login-form input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Input Focus Glow */
+.signin-form input:focus, .login-form input:focus {
+  border-color: var(--forest-green);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.1);
+}
+
+.signin-form button, .login-form button {
+  background: linear-gradient(135deg, var(--forest-green), var(--leaf-green));
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+}
+
+.signin-form button:hover, .login-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 139, 87, 0.4);
+  filter: brightness(1.1);
+}
+
+/* =========================================
+   5. ANIMATIONS
+   ========================================= */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+<<<<<<< HEAD
+=======
+  body { animation: none !important; opacity: 1 !important; transform: none !important; }
+=======
 .signin-form label, .login-form label {
   margin-bottom: 8px;
   font-weight: 600;
@@ -253,6 +517,7 @@ input#darkModeToggle:checked + .toggle-label .checkbox::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   .signin-container, .login-container { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
@@ -296,4 +561,8 @@ body.dark-mode input {
 body.dark-mode input:focus {
   background: #2a2a2a;
   border-color: var(--leaf-green);
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+/* RESET */
+=======
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 /* =========================================
    1. RESET & VARIABLES (Nature Palette)
    ========================================= */
@@ -17,6 +23,10 @@
   --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
 }
 
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +36,36 @@
 
 /* BODY */
 body {
+<<<<<<< HEAD
+  background-color: var(--background-light);
+  color: var(--text-light);
+=======
+<<<<<<< HEAD
+  background-color: rgb(250, 250, 250);
+  color: #333;
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+  line-height: 1.6;
+  opacity: 0; 
+  animation: pageFadeIn 0.8s cubic-bezier(.2,.8,.2,1) 1 forwards;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION (Forest Green)
+   ========================================= */
+.site-header {
+<<<<<<< HEAD
+=======
+    height: 80px;
+    display: flex;
+    align-items: center;    /* vertical center logo, nav and toggle */
+    gap: 16px;
+    padding: 6px 20px;
+    justify-content: space-between;
+    font-size: 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    z-index: 50;
+    background: rgba(255,255,255,0.95); /* keep header readable */
+=======
   background-color: var(--background-light);
   color: var(--text-light);
   line-height: 1.6;
@@ -37,6 +77,7 @@ body {
    2. HEADER & NAVIGATION (Forest Green)
    ========================================= */
 .site-header {
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   /* Green Glass Background */
   background: rgba(46, 139, 87, 0.95); 
   backdrop-filter: blur(12px); 
@@ -52,10 +93,19 @@ body {
   font-size: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   z-index: 50;
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .logo {
   display: flex;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  justify-self: space-between;
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   align-items: center;
   color: #ffffff; /* White text */
   font-weight: 700;
@@ -64,6 +114,25 @@ body {
 }
 
 .logo img {
+<<<<<<< HEAD
+=======
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-right: 5px;
+    border-radius: 5px; 
+    object-fit: cover; 
+    margin-top: 0px;
+=======
+  align-items: center;
+  color: #ffffff; /* White text */
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-left: 0; /* Reset margin for cleaner align */
+}
+
+.logo img {
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   height: 40px;
   width: auto;
   display: block;
@@ -71,27 +140,85 @@ body {
   border-radius: 8px; 
   object-fit: cover; 
   border: 1px solid rgba(255,255,255,0.3);
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 /* NAVIGATION */
 .nav {
+<<<<<<< HEAD
+  margin-left: auto;
+  margin-right: 0;
+=======
+<<<<<<< HEAD
+    margin-left: auto;
+    margin-right: 0;
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+}
+
+.nav ul {
+<<<<<<< HEAD
+=======
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+=======
   margin-left: auto;
   margin-right: 0;
 }
 
 .nav ul {
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   display: flex;
   gap: 18px;
   list-style: none;
   padding: 0;
   margin: 0;
   align-items: center;
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .nav li {
   margin: 0;
 }
 
+<<<<<<< HEAD
+/* Nav Links (White Text) */
+=======
+<<<<<<< HEAD
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+.nav a {
+  display: inline-block;
+  padding: 8px 20px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover: White Bubble + Green Text */
+.nav a:hover,
+.nav a:focus {
+  color: var(--forest-green);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  outline: none;
+<<<<<<< HEAD
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+=======
+=======
 /* Nav Links (White Text) */
 .nav a {
   display: inline-block;
@@ -112,12 +239,111 @@ body {
   transform: translateY(-2px);
   outline: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .nav a:active {
   transform: translateY(0);
 }
 
+<<<<<<< HEAD
+/* Growing Leaf Line Animation */
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--leaf-green);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav a:hover::after {
+  width: 50%;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+=======
+<<<<<<< HEAD
+/* HERO SECTION */
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.featured-banner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(1.06) contrast(1.08) saturate(1.05);
+  transform: scale(1.02);
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* Slightly darker for text legibility */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  max-width: 1100px;
+}
+
+.hero .hero-content h1 {
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  margin: 0 0 10px;
+  font-size: 2.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.read-more-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
+}
+
+<<<<<<< HEAD
+=======
+/* CONTAINER */
+=======
 /* Growing Leaf Line Animation */
 .nav a::after {
   content: '';
@@ -206,6 +432,7 @@ body {
   transition: all 0.3s ease;
 }
 
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 .read-more-btn:hover {
   background: white;
   color: var(--forest-green);
@@ -215,6 +442,10 @@ body {
 /* =========================================
    4. MAIN CONTENT LAYOUT
    ========================================= */
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 .container {
   width: 90%;
   margin: auto;
@@ -228,6 +459,7 @@ body {
   margin-top: 3rem;
 }
 
+<<<<<<< HEAD
 /* BLOG POST CARD */
 .blog-post {
   background: white;
@@ -235,30 +467,100 @@ body {
   border-radius: 16px; /* Rounded corners match other pages */
   box-shadow: var(--shadow-light);
   border-top: 5px solid var(--forest-green);
+=======
+<<<<<<< HEAD
+/* BLOG POST */
+.blog-post {
+  background: white;
+  padding: 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+
+=======
+/* BLOG POST CARD */
+.blog-post {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px; /* Rounded corners match other pages */
+  box-shadow: var(--shadow-light);
+  border-top: 5px solid var(--forest-green);
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .post-title {
   font-size: 1.8rem;
+<<<<<<< HEAD
   color: var(--forest-green);
   text-align: center;
   margin-bottom: 1rem;
+=======
+<<<<<<< HEAD
+  color: #088da8;
+  text-align: center;
+=======
+  color: var(--forest-green);
+  text-align: center;
+  margin-bottom: 1rem;
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 /* IMAGES */
 .hover-img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+<<<<<<< HEAD
   border-radius: 12px;
+=======
+<<<<<<< HEAD
+  border-radius: 10px;
+=======
+  border-radius: 12px;
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .hover-img:hover {
   transform: scale(1.02);
+<<<<<<< HEAD
   box-shadow: var(--shadow-hover);
+=======
+<<<<<<< HEAD
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+=======
+  box-shadow: var(--shadow-hover);
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 /* SIDEBAR */
 .sidebar {
   background: white;
   padding: 1.5rem;
+<<<<<<< HEAD
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  height: fit-content;
+  width: 100%; /* Reset width to fit grid */
+=======
+<<<<<<< HEAD
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 130%;
+  height: 100%;
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+}
+
+/* Sidebar Widgets */
+.widget h3 {
+  text-align: center;
+<<<<<<< HEAD
+  /* UPDATED: Green Gradient */
+  background: linear-gradient(90deg, var(--leaf-green), var(--forest-green));
+=======
+  background: linear-gradient(90deg, #00c6ff, #007a91);
+=======
   border-radius: 16px;
   box-shadow: var(--shadow-light);
   height: fit-content;
@@ -270,6 +572,8 @@ body {
   text-align: center;
   /* UPDATED: Green Gradient */
   background: linear-gradient(90deg, var(--leaf-green), var(--forest-green));
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   color: white;
   padding: 10px 0;
   border-radius: 8px;
@@ -284,6 +588,58 @@ body {
   border-radius: 10px;
 }
 
+<<<<<<< HEAD
+/* =========================================
+   5. FOOTER & EXTRAS
+   ========================================= */
+.site-footer {
+  background: var(--forest-green);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+=======
+<<<<<<< HEAD
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
+/* BACK TO TOP BUTTON */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--forest-green);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: none; /* JS toggles this */
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 2000;
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  background: var(--leaf-green);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* TOGGLE SWITCH (Positioning) */
+.toggle-switch {
+  position: relative;
+<<<<<<< HEAD
+  margin-left: 15px;
+=======
+  top: 0;
+  right: 0;
+  margin-left: 12px;
+=======
 /* =========================================
    5. FOOTER & EXTRAS
    ========================================= */
@@ -326,34 +682,114 @@ body {
 .toggle-switch {
   position: relative;
   margin-left: 15px;
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .toggle-switch label {
   cursor: pointer;
   font-size: 1.5rem;
+<<<<<<< HEAD
   color: white; /* Make toggle icon white on green header */
 }
 
 /* =========================================
    6. EMBEDDED CONTENT
    ========================================= */
+=======
+<<<<<<< HEAD
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+    .site-header { height: 48px; padding: 6px 12px; }
+    .site-header .logo img { height: 32px; }
+    .hero { height: 45vh; min-height: 220px; }
+    .hero .hero-content h1 { font-size: 1.4rem; }
+}
+
+/* Small screen: stack or collapse more compactly */
+@media (max-width: 640px) {
+    .nav ul {
+        gap: 10px;
+    }
+    .nav a {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+}
+
+/* Optional: ensure backToTop button hidden by default until JS shows it */
+#backToTop { display: none; }
+
+/* Page load fade-in (CSS-only). Respects reduced-motion preference. */
+body { opacity: 0; animation: pageFadeIn 420ms cubic-bezier(.2,.8,.2,1) 1 forwards; }
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* EMBEDDED CONTENT SECTION STYLES */
+=======
+  color: white; /* Make toggle icon white on green header */
+}
+
+/* =========================================
+   6. EMBEDDED CONTENT
+   ========================================= */
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 .embedded-content-section {
   grid-column: 1 / -1;
   margin-top: 40px;
   padding: 30px;
   background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
   border-radius: 12px;
+<<<<<<< HEAD
   /* Updated to Green */
   border-left: 5px solid var(--forest-green);
+=======
+<<<<<<< HEAD
+  border-left: 5px solid #3498db;
+=======
+  /* Updated to Green */
+  border-left: 5px solid var(--forest-green);
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .embedded-content-section h2 {
   margin-bottom: 20px;
+<<<<<<< HEAD
   color: var(--text-dark);
   font-size: 1.5em;
 }
 
 /* External Links Grid */
+=======
+<<<<<<< HEAD
+  color: #2c3e50;
+  font-size: 1.5em;
+}
+
+/* External Links Grid - Clickable Images */
+=======
+  color: var(--text-dark);
+  font-size: 1.5em;
+}
+
+/* External Links Grid */
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 .external-links-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -367,7 +803,15 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+<<<<<<< HEAD
   box-shadow: var(--shadow-light);
+=======
+<<<<<<< HEAD
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+=======
+  box-shadow: var(--shadow-light);
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   text-decoration: none;
   display: block;
   height: 200px;
@@ -375,7 +819,15 @@ body {
 
 .external-link-card:hover {
   transform: translateY(-8px) scale(1.02);
+<<<<<<< HEAD
   box-shadow: var(--shadow-hover);
+=======
+<<<<<<< HEAD
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+=======
+  box-shadow: var(--shadow-hover);
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .external-link-card img {
@@ -399,7 +851,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   background: rgba(46, 139, 87, 0.7); /* Green overlay */
+=======
+<<<<<<< HEAD
+  background: rgba(0, 0, 0, 0.5);
+=======
+  background: rgba(46, 139, 87, 0.7); /* Green overlay */
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -412,7 +872,14 @@ body {
   font-size: 2.5em;
   margin-bottom: 8px;
   display: block;
+<<<<<<< HEAD
   color: white;
+=======
+<<<<<<< HEAD
+=======
+  color: white;
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 .link-overlay p {
@@ -427,6 +894,7 @@ body {
   text-align: center;
 }
 
+<<<<<<< HEAD
 /* =========================================
    7. DARK MODE
    ========================================= */
@@ -454,6 +922,42 @@ body.dark-mode .sidebar {
 body.dark-mode .embedded-content-section {
   background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
   border-left-color: var(--leaf-green);
+=======
+<<<<<<< HEAD
+/* Dark Mode Support for Embedded Content */
+body.dark-mode .embedded-content-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-left-color: #3498db;
+=======
+/* =========================================
+   7. DARK MODE
+   ========================================= */
+body.dark-mode {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark-mode .site-header {
+  background: rgba(30, 90, 50, 0.95); /* Darker green */
+}
+
+body.dark-mode .site-footer {
+  background: #1c1c1c;
+}
+
+body.dark-mode .blog-post,
+body.dark-mode .sidebar {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: none;
+}
+
+/* Embeds in Dark Mode */
+body.dark-mode .embedded-content-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-left-color: var(--leaf-green);
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 body.dark-mode .embedded-content-section h2 {
@@ -470,6 +974,11 @@ body.dark-mode .external-link-card:hover {
 
 body.dark-mode .external-links-help {
   color: #b0b0b0;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
 
 /* =========================================
@@ -501,4 +1010,8 @@ body.dark-mode .external-links-help {
 @media (max-width: 640px) {
   .nav ul { gap: 10px; }
   .nav a { padding: 6px 12px; font-size: 14px; }
+<<<<<<< HEAD
+=======
+>>>>>>> 7e68d6e1b5a5f805779340dc17b020e3615da394
+>>>>>>> 19819f1befaee0ea3139ac8ca1e8776cf8147ea8
 }
