@@ -349,30 +349,67 @@
         }
 
         /* =========================================
-           DARK MODE
+           ENHANCED DARK MODE - CONSISTENT WITH OTHER PAGES
            ========================================= */
         body.dark-mode {
-            background-color: #111;
-            color: #fff;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .navbar {
+            background: rgba(26, 99, 67, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        body.dark-mode .nav-buttons .login-btn {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        body.dark-mode .nav-buttons .login-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+
+        body.dark-mode .nav-buttons .signup-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a6343;
+        }
+
+        body.dark-mode .nav-buttons .signup-btn:hover {
+            background: #3cb371;
+            color: white;
+        }
+
+        body.dark-mode .hero::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(26, 99, 67, 0.4));
         }
 
         body.dark-mode .features {
-            background: #1a1a1a;
+            background: #222;
         }
 
         body.dark-mode .features h2 {
-            color: var(--sky-blue);
+            color: #3cb371;
         }
 
         body.dark-mode .features-subtitle {
-            color: #ccc;
+            color: #b0b0b0;
         }
 
         body.dark-mode .feature-card {
-            background: #222;
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            border-top-color: var(--leaf-green);
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border: 1px solid #404040;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            border-top-color: #3cb371;
+        }
+
+        body.dark-mode .feature-card:hover {
+            background: #333;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
         }
 
         body.dark-mode .feature-card h3 {
@@ -380,7 +417,32 @@
         }
 
         body.dark-mode .feature-card p {
-            color: #ccc;
+            color: #c0c0c0;
+        }
+
+        body.dark-mode .feature-icon {
+            color: #3cb371;
+        }
+
+        body.dark-mode .cta-primary {
+            background: linear-gradient(135deg, #1a6343, #2e8b57);
+            box-shadow: 0 4px 15px rgba(26, 99, 67, 0.4);
+        }
+
+        body.dark-mode .cta-primary:hover {
+            background: linear-gradient(135deg, #2e8b57, #3cb371);
+            box-shadow: 0 8px 25px rgba(26, 99, 67, 0.6);
+        }
+
+        body.dark-mode .cta-secondary {
+            background: transparent;
+            color: #e0e0e0;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        body.dark-mode .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a6343;
         }
 
         /* =========================================
@@ -473,11 +535,11 @@
                 sites and local attractions. Bukidnon Local Tourism Spot provides reliable guidance to help you experience the places that define the heart of Bukidnon.
             </p>
             <div class="cta-buttons">
-                <a href="index.html" class="cta-btn cta-primary">
+                <a href="login.html" class="cta-btn cta-primary">
                     <i class="fas fa-compass"></i>
                     Start Exploring
                 </a>
-                <a href="About.html" class="cta-btn cta-secondary">
+                <a href="#features" class="cta-btn cta-secondary">
                     <i class="fas fa-info-circle"></i>
                     Learn More
                 </a>
@@ -486,7 +548,7 @@
     </section>
 
     <!-- FEATURES SECTION -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="features-container">
             <h2>Why Choose Bukidnon Explorer?</h2>
             <p class="features-subtitle">

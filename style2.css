@@ -1,40 +1,59 @@
 /* =========================================
-   1. RESET & BASICS
+   1. ENHANCED RESET & BASICS
    ========================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 /* Smooth Scrolling */
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  scroll-padding-top: 80px;
+}
 
 .logo {
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .logo img {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
   display: block;
-  margin-right: 10px;
-  border-radius: 8px; 
+  margin-right: 12px;
+  border-radius: 10px; 
   object-fit: cover; 
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Nature Palette */
+.logo img:hover {
+  border-color: rgba(255,255,255,0.8);
+  transform: rotate(5deg);
+}
+
+/* Enhanced Nature Palette */
 :root {
   --forest-green: #2e8b57;
+  --dark-green: #1a5f3f;
   --sky-blue: #87ceeb;
   --earth-brown: #8b5e3c;
   --leaf-green: #3cb371;
+  --light-green: #90ee90;
   --soft-white: #f8f9fa;
-  --shadow-light: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.2);
+  --shadow-light: 0 15px 35px -5px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 25px 50px -5px rgba(0, 0, 0, 0.25);
+  --gradient-primary: linear-gradient(135deg, var(--forest-green), var(--leaf-green));
+  --gradient-secondary: linear-gradient(135deg, var(--dark-green), var(--forest-green));
 }
 
 /* =========================================
@@ -237,40 +256,77 @@ input#darkModeToggleAbout:checked + .toggle-label .checkbox::after {
 }
 
 .team-member {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #ffffff, #f8fffe);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  border: 1px solid rgba(46, 139, 87, 0.1);
+}
+
+.team-member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover::before {
+  transform: scaleX(1);
 }
 
 .team-member:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  border-color: rgba(46, 139, 87, 0.3);
 }
 
 .member-photo {
   width: 100%;
-  height: 250px;
+  height: 280px;
   position: relative;
   overflow: hidden;
+}
+
+.member-photo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 60%, rgba(46, 139, 87, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-member:hover .member-photo::after {
+  opacity: 1;
 }
 
 .member-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(1.0);
 }
 
 .team-member:hover .member-photo img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(1.1);
 }
 
 .member-info {
-  padding: 25px 20px;
+  padding: 30px 25px;
   text-align: center;
+  background: linear-gradient(145deg, #ffffff, #f8fffe);
 }
 
 .member-info h3 {
@@ -451,28 +507,48 @@ body.dark-mode .card {
 body.dark-mode .card h1 { color: #87ceeb; } 
 body.dark-mode .card p { color: #ccc; }
 
-/* Dark mode for new team cards */
+/* Dark mode for team member cards */
 body.dark-mode .team-member {
-  background: #1a1a1a;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .team-member:hover {
+  background: linear-gradient(145deg, #333, #242424);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border-color: rgba(60, 179, 113, 0.4);
+}
+
+body.dark-mode .member-info {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
 }
 
 body.dark-mode .member-info h3 {
   color: #fff;
 }
 
+body.dark-mode .member-role {
+  color: #3cb371 !important;
+  font-weight: 600;
+}
+
 body.dark-mode .member-description {
-  color: #ccc;
+  color: #b0b0b0;
 }
 
 body.dark-mode .social-links a {
-  background: #333;
+  background: rgba(255, 255, 255, 0.1);
   color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 body.dark-mode .social-links a:hover {
   background: var(--leaf-green);
   color: white;
+  border-color: var(--leaf-green);
+  transform: translateY(-2px);
 }
 
 body.dark-mode form input, 
