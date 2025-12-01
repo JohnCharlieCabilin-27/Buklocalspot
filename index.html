@@ -3,338 +3,576 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukidnon Explorer | Local Tourism Blog</title>
-    <link rel="stylesheet" href="Stylesheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Bukidnon Explorer | Discover Hidden Gems</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-
-    <header class="main-header">
-        <div class="logo">
-            <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
-            <span>Bukidnon Explorer</span>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#home">HOME</a></li>
-                <li class="dropdown">
-                    <a href="About.html">ABOUT</a>
-                </li>
-                <li><a href="Log in.html">LOG IN</a></li>
-                <li><a href="Sign up.html">SIGN UP</a></li>
-                <li><a href="#" id="search-icon"><i class="fas fa-search"></i></a></li>
-                <li class="toggle-item">
-                  <div class="toggle-switch">
-                    <input type="checkbox" id="darkModeToggle">
-                    <label for="darkModeToggle" class="toggle-label">
-                      <span class="moon">🌙</span>
-                      <span class="checkbox" aria-hidden="true"></span>
-                    </label>
-                  </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div id="search-overlay" class="search-overlay" style="display: none;">
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="Search Bukidnon Explorer!">
-            <button onclick="document.getElementById('search-overlay').style.display='none'">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    </div>
-    
-    <div class="divider"></div>
-
-    <main class="container">
-        <section class="latest-news">
-            <h1>LATEST TRAVEL NEWS</h1>
-            <hr class="title-line">
-            <p class="subtitle">EXPLORE LOCAL GEMS AND HIDDEN SPOTS</p>
-        </section>
-
-        <section class="posts-grid">
-            
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="Nasuli.html">
-                        <img src="https://gttp.images.tshiftcdn.com/470106/x/0/photo-by-nasuli-spring-resort" alt="Nasuli Cold Spring">
-                    </a>
-                </div>
-                <h2 class="post-title">Nasuli: Plunge into the Icy Bliss of Bukidnon's Cold Spring</h2>
-                <div class="post-meta">
-                    <span class="author">By: MARIA REYES</span> | <span class="date">05/10/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="4500">4.5K</span>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="Cedar.html">
-                        <img src="https://www.phtourguide.com/wp-content/uploads/2010/09/CEDAR-Spring-Pool.jpg" alt="CEDAR (Center for Ecological Development and Recreation)">
-                    </a>
-                </div>
-                <h2 class="post-title">CEDAR: Exploring Waterfalls and Trails in a Natural Reserve</h2>
-                <div class="post-meta">
-                    <span class="author">By: JOHN SMITH</span> | <span class="date">06/10/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="3200">3.2K</span>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="Communal.html">
-                        <img src="https://www.escapemanila.com/wp-content/uploads/2023/09/bukidnon-communal-ranch.jpg" alt="Communal Ranch horses and rolling hills">
-                    </a>
-                </div>
-                <h2 class="post-title">Communal Ranch: Bukidnon's Rolling Hills and Horse Country</h2>
-                <div class="post-meta">
-                    <span class="author">By: LARA CRUZ</span> | <span class="date">08/10/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="5800">5.8K</span>
-                </div>
-            </article>
-            
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="Dahilayan.html">
-                        <img src="https://pix10.agoda.net/hotelImages/301773/-1/7c172a8869f89606862ab8390a153096.png?ca=0&ce=1&s=1024x768" alt="Dahilayan Adventure Park Zipline">
-                    </a>
-                </div>
-                <h2 class="post-title">Dahilayan Park: Mindanao's Adventure Capital is Calling</h2>
-                <div class="post-meta">
-                    <span class="author">By: MIKE LEE</span> | <span class="date">04/18/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="7100">7.1K</span>
-                </div>
-            </article>
-
-
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="Sabangan.html">
-                        <img src="https://mindtrip.ai/attractions/1d7a/63b2/1f16/4bb8/e20d/0c35/a517/de1c" alt="Sabangan River and Resort">
-                    </a>
-                </div>
-                <h2 class="post-title">Sabangan: The Hidden Rivers and Resorts of Bukidnon</h2>
-                <div class="post-meta">
-                    <span class="author">By: ANNA CHUA</span> | <span class="date">09/20/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="2900">2.9K</span>
-                </div>
-            </article>
-            
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="Kipolot.html">
-                        <img src="https://graciestrips.wordpress.com/wp-content/uploads/2016/02/img_1971.jpg?w=1200" alt="Kipolot View Deck in Quezon, Bukidnon">
-                    </a>
-                </div>
-                <h2 class="post-title">Kipolot View Deck: Quezon’s Best Scenic Overlook Spot</h2>
-                <div class="post-meta">
-                    <span class="author">By: VINCE TEE</span> | <span class="date">02/14/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="4000">4.0K</span>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="kaamulan.html">
-                        <img src="https://nojuanisanisland.com/wp-content/uploads/2015/06/0kg.jpg" alt="Kaamulan Park Cultural Site">
-                    </a>
-                </div>
-                <h2 class="post-title">Kaamulan Park: The Cultural Heartbeat of Bukidnon</h2>
-                <div class="post-meta">
-                    <span class="author">By: JANE DOE</span> | <span class="date">03/17/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="6500">6.5K</span>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <div class="post-image">
-                    <a href="LakeApo.html">
-                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/1f/67/e6/photo0jpg.jpg?w=1200&h=-1&s=1" alt="Kayaking on Lake Apo">
-                    </a>
-                </div>
-                <h2 class="post-title">Lake Apo: Serenity In The Heart of Mindanao</h2>
-                <div class="post-meta">
-                    <span class="author">By: JOHN SMITH</span> | <span class="date">09/19/2025</span>
-                </div>
-                <div class="share-info heart-button">
-                    <i class="fas fa-heart"></i>
-                    <span class="reaction-count" data-initial="3200">3.2K</span>
-                </div>
-            </article>
-            
-        </section>
-
-    </main>
-
-    <script>
-        // Helper: Format numbers (e.g., 4500 -> 4.5K)
-        function formatCount(num) {
-            if (num >= 1000) {
-                return (num / 1000).toFixed(1) + 'K';
-            }
-            return num;
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest-green: #2e8b57;
+            --leaf-green: #3cb371;
+            --earth-brown: #8b5e3c;
+            --sky-blue: #87ceeb;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+            --background-light: #f8f9fa;
+            --border-color: #e0e0e0;
+            --shadow-light: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
         }
 
-        // 1. Search Bar Functionality
-        (function() {
-            var searchIcon = document.getElementById('search-icon');
-            var overlay = document.getElementById('search-overlay');
-            var input = document.getElementById('search-input');
-            var header = document.querySelector('.main-header');
-            var postsGrid = document.querySelector('.posts-grid');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            function showOverlay() {
-                var headerH = header ? header.offsetHeight : 70;
-                overlay.style.top = headerH + 'px';
-                overlay.style.display = 'flex';
-                input && input.focus();
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: #ffffff;
+            opacity: 0;
+            animation: pageFadeIn 0.8s cubic-bezier(.2,.8,.2,1) 1 forwards;
+        }
+
+        /* =========================================
+           NAVIGATION BAR
+           ========================================= */
+        .navbar {
+            background: rgba(46, 139, 87, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .login-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .signup-btn {
+            background: white;
+            color: var(--forest-green);
+        }
+
+        .signup-btn:hover {
+            background: var(--leaf-green);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .toggle-switch {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .toggle-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .toggle-label .moon {
+            font-size: 18px;
+            line-height: 1;
+            transition: transform 0.3s ease;
+            color: white;
+        }
+
+        .toggle-label:hover .moon {
+            transform: rotate(15deg);
+        }
+
+        .toggle-label .checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.6);
+            border-radius: 4px;
+            display: inline-block;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        input#darkModeToggle:checked + .toggle-label .checkbox {
+            background: white;
+            border-color: white;
+        }
+
+        input#darkModeToggle:checked + .toggle-label .checkbox::after {
+            content: '✓';
+            position: absolute;
+            left: 2px;
+            top: -2px;
+            color: var(--forest-green);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.3), rgba(60, 179, 113, 0.2));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--leaf-green);
+            font-weight: 600;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--forest-green), var(--leaf-green));
+            color: white;
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--forest-green);
+            transform: translateY(-3px);
+        }
+
+        /* =========================================
+           FEATURES SECTION
+           ========================================= */
+        .features {
+            padding: 100px 50px;
+            background: var(--background-light);
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .features-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border-top: 5px solid var(--forest-green);
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--leaf-green);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           DARK MODE
+           ========================================= */
+        body.dark-mode {
+            background-color: #111;
+            color: #fff;
+        }
+
+        body.dark-mode .features {
+            background: #1a1a1a;
+        }
+
+        body.dark-mode .features h2 {
+            color: var(--sky-blue);
+        }
+
+        body.dark-mode .features-subtitle {
+            color: #ccc;
+        }
+
+        body.dark-mode .feature-card {
+            background: #222;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            border-top-color: var(--leaf-green);
+        }
+
+        body.dark-mode .feature-card h3 {
+            color: #fff;
+        }
+
+        body.dark-mode .feature-card p {
+            color: #ccc;
+        }
+
+        /* =========================================
+           ANIMATIONS
+           ========================================= */
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: none; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 20px;
             }
 
-            function hideOverlay() {
-                overlay.style.display = 'none';
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
             }
 
-            function performSearch(query) {
-                query = query.toLowerCase().trim();
-                const cards = postsGrid.querySelectorAll('.post-card');
-                let visibleCount = 0;
-
-                cards.forEach(card => {
-                    const title = card.querySelector('.post-title').textContent.toLowerCase();
-                    const author = card.querySelector('.author').textContent.toLowerCase();
-                    
-                    if (query === '' || title.includes(query) || author.includes(query)) {
-                        card.style.display = '';
-                        visibleCount++;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                let noResultsMsg = document.getElementById('no-results-message');
-                if (visibleCount === 0 && query !== '') {
-                    if (!noResultsMsg) {
-                        noResultsMsg = document.createElement('div');
-                        noResultsMsg.id = 'no-results-message';
-                        noResultsMsg.style.cssText = 'text-align: center; padding: 40px 20px; font-size: 1.1em; color: #888;';
-                        postsGrid.appendChild(noResultsMsg);
-                    }
-                    noResultsMsg.textContent = `No results found for "${query}". Try searching for a location or author!`;
-                    noResultsMsg.style.display = '';
-                } else if (noResultsMsg) {
-                    noResultsMsg.style.display = 'none';
-                }
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            if (searchIcon) {
-                searchIcon.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (overlay.style.display === 'flex') hideOverlay();
-                    else showOverlay();
-                });
+            .hero .subtitle {
+                font-size: 1.2rem;
             }
 
-            if (input) {
-                input.addEventListener('input', function(e) {
-                    performSearch(e.target.value);
-                });
-                input.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape') hideOverlay();
-                });
+            .hero .description {
+                font-size: 1rem;
             }
 
-            window.addEventListener('scroll', function() {
-                if (overlay.style.display === 'flex') hideOverlay();
-            }, { passive: true });
-        })();
-
-        // 2. Prevent Page Jump
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            if (link.getAttribute('href').startsWith('#') && link.id !== 'search-icon') {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                });
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
-        });
 
-        // 3. PERSISTENT HEART BUTTONS (Saves to Browser Storage)
-        document.querySelectorAll('.post-card').forEach(card => {
-            // Find elements within the card
-            const button = card.querySelector('.heart-button');
-            const countSpan = card.querySelector('.reaction-count');
-            const title = card.querySelector('.post-title').textContent.trim(); // Unique Key
+            .features {
+                padding: 60px 20px;
+            }
+
+            .features h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
+                <span>Bukidnon Explorer</span>
+            </a>
             
-            // Initial Data
-            const initialCount = parseInt(countSpan.getAttribute('data-initial'));
+            <div class="nav-buttons">
+                <a href="Log in.html" class="nav-btn login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="Sign up.html" class="nav-btn signup-btn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <label for="darkModeToggle" class="toggle-label">
+                        <span class="moon">🌙</span>
+                        <span class="checkbox" aria-hidden="true"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore Bukidnon's Hidden Treasures</h1>
+            <p class="subtitle">Your Gateway to Paradise</p>
+            <p class="description">
+                Discover the breathtaking landscapes, pristine springs, majestic waterfalls, and rich cultural heritage of Bukidnon. 
+                From the cool highlands of Dahilayan to the emerald waters of Lake Apo, let us guide you through the Philippines' best-kept secrets.
+            </p>
+            <div class="cta-buttons">
+                <a href="index.html" class="cta-btn cta-primary">
+                    <i class="fas fa-compass"></i>
+                    Start Exploring
+                </a>
+                <a href="About.html" class="cta-btn cta-secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="features-container">
+            <h2>Why Choose Bukidnon Explorer?</h2>
+            <p class="features-subtitle">
+                Your trusted companion for discovering the natural wonders and cultural richness of Bukidnon Province
+            </p>
             
-            // Create a unique key for LocalStorage based on the post title
-            // Removes spaces to make a clean ID, e.g., "liked_Nasuli_..."
-            const storageKey = 'liked_' + title.replace(/\s+/g, '_');
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-map-marked-alt feature-icon"></i>
+                    <h3>Detailed Guides</h3>
+                    <p>Comprehensive travel information including locations, activities, fees, and insider tips for each destination.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-camera feature-icon"></i>
+                    <h3>Stunning Photography</h3>
+                    <p>High-quality images showcasing the natural beauty and authentic experiences waiting for you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Local Expertise</h3>
+                    <p>Created by locals who know Bukidnon's hidden gems, ensuring authentic and reliable recommendations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access our guides anywhere, anytime. Perfect for planning your adventure or exploring on the go.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-leaf feature-icon"></i>
+                    <h3>Eco-Tourism Focus</h3>
+                    <p>Promoting sustainable travel that preserves Bukidnon's natural beauty for future generations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-heart feature-icon"></i>
+                    <h3>Community Driven</h3>
+                    <p>Join our community of nature lovers and adventure seekers sharing their Bukidnon experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            // Check if user previously liked this specific post
-            const isSaved = localStorage.getItem(storageKey) === 'true';
-            let isLiked = isSaved;
-
-            // --- ON LOAD: Set Initial State ---
-            if (isLiked) {
-                button.classList.add('liked');
-                countSpan.textContent = formatCount(initialCount + 1);
-            } else {
-                button.classList.remove('liked');
-                countSpan.textContent = formatCount(initialCount);
-            }
-
-            // --- ON CLICK: Toggle State & Save ---
-            button.addEventListener('click', function() {
-                isLiked = !isLiked; // Flip state
-
-                if (isLiked) {
-                    // LIKE IT
-                    button.classList.add('liked');
-                    countSpan.textContent = formatCount(initialCount + 1);
-                    localStorage.setItem(storageKey, 'true'); // Save to storage
-                } else {
-                    // UNDO LIKE
-                    button.classList.remove('liked');
-                    countSpan.textContent = formatCount(initialCount);
-                    localStorage.removeItem(storageKey); // Remove from storage
-                }
-            });
-        });
-
-        // 4. Dark Mode Toggle
+    <script>
+        // Dark Mode Toggle with Persistence
         (function() {
             var toggle = document.getElementById('darkModeToggle');
             if (!toggle) return;
+            
+            // Check for saved dark mode preference
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            
+            // Apply dark mode if previously enabled
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                toggle.checked = true;
+            }
+            
+            // Listen for toggle changes
             toggle.addEventListener('change', function() {
-                document.body.classList.toggle('dark-mode');
+                if (this.checked) {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'true');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'false');
+                }
             });
         })();
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
-    
 </body>
 </html>

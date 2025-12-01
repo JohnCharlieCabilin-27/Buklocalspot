@@ -34,8 +34,198 @@ body {
 }
 
 /* =========================================
-   2. HEADER & NAVIGATION (Forest Green)
+   2. HEADER & NAVIGATION (Green Nature Theme)
    ========================================= */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  
+  /* Forest Green Glass Background */
+  background: rgba(46, 139, 87, 0.95); 
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #ffffff; /* White text for logo */
+  text-decoration: none;
+}
+
+.logo img {
+  width: 40px; 
+  height: 40px; 
+  margin-right: 10px;
+  border-radius: 8px; 
+  object-fit: cover; 
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li {
+  margin-left: 10px; 
+}
+
+/* Navigation Links */
+.main-nav ul li a {
+  /* Off-white text to match dark green bg */
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 0.95em;
+  padding: 8px 20px;
+  display: block;
+  border-radius: 25px; 
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover: White Bubble + Green Text */
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  color: var(--forest-green); 
+  background-color: #ffffff; 
+  transform: translateY(-3px);
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.main-nav ul li a:active {
+  transform: translateY(0);
+}
+
+/* Growing Leaf Line Animation */
+.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--leaf-green); 
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.main-nav ul li a:hover::after {
+  width: 50%; 
+}
+
+/* Toggle Switch Styling */
+.toggle-item {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.toggle-switch {
+  display: inline-flex;
+  align-items: center;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label .moon {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.toggle-label:hover .moon {
+  transform: rotate(15deg);
+}
+
+.toggle-label .checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+input#darkModeToggle:checked + .toggle-label .checkbox {
+  background: white;
+  border-color: white;
+}
+
+input#darkModeToggle:checked + .toggle-label .checkbox::after {
+  content: '✓';
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  color: var(--forest-green);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white; 
+  min-width: 180px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  z-index: 100;
+  padding: 10px;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dropdown-content a {
+  color: var(--text-dark); 
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--background-light);
+  color: var(--forest-green);
+  transform: none; 
+  box-shadow: none;
+}
+.dropdown-content a::after { display: none; }
+
+/* Legacy site-header support */
 .site-header {
   /* Green Glass Background */
   background: rgba(46, 139, 87, 0.95); 
@@ -433,10 +623,6 @@ body {
 body.dark-mode {
   background: #121212;
   color: #ddd;
-}
-
-body.dark-mode .site-header {
-  background: rgba(30, 90, 50, 0.95); /* Darker green */
 }
 
 body.dark-mode .site-footer {

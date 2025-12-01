@@ -3,31 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bukidnon Tourism Blog - Sign Up</title>
+  <title>Bukidnon Explorer | Local Tourism Blog</title>
   <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
-      <span>Bukidnon Explorer</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="About.html">About</a></li>
-
-      <li class="toggle-item">
-        <div class="toggle-switch">
-          <input type="checkbox" id="darkModeToggle">
-          <label for="darkModeToggle" class="toggle-label">
-            <span class="moon">🌙</span>
-            <span class="checkbox" aria-hidden="true"></span>
-          </label>
-        </div>
-      </li>
-    </ul>
-  </nav>
-
   <section class="signin-container">
     <h2>Sign Up</h2>
     <form class="signin-form">
@@ -63,13 +42,33 @@
   </section>
 
   <script>
-    (function() {
-      var toggle = document.getElementById('darkModeToggle');
-      if (!toggle) return;
-      toggle.addEventListener('change', function() {
-        document.body.classList.toggle('dark-mode');
-      });
-    })();
+    // Check for saved dark mode preference and apply it
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    }
+
+    // Handle form submission and redirect
+    document.querySelector('.signin-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simple validation
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const terms = document.getElementById('terms').checked;
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      
+      if (!terms) {
+        alert('Please agree to the terms and conditions!');
+        return;
+      }
+      
+      // Redirect to main page
+      window.location.href = 'blogs.html';
+    });
   </script>
 </body>
 </html>

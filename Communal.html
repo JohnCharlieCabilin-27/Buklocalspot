@@ -14,10 +14,9 @@
      </div>
     <nav class="nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="About.html#contact">Contact</a></li>
+        <li><a href="blogs.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
       </ul>
     </nav>
     <div class="toggle-switch">
@@ -137,10 +136,27 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Dark/Light mode toggle
+    // Dark/Light mode toggle with persistence
     const toggle = document.getElementById('darkModeToggle');
+    
+    // Check for saved dark mode preference
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    // Apply dark mode if previously enabled
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    
+    // Listen for toggle changes
     toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
     });
   </script>
 </body>

@@ -3,31 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bukidnon Tourism Blog - Login</title>
+  <title>Bukidnon Explorer | Login</title>
   <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
-      <span>Bukidnon Explorer</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="About.html">About</a></li>
-      
-      <li class="toggle-item">
-        <div class="toggle-switch">
-          <input type="checkbox" id="darkModeToggle">
-          <label for="darkModeToggle" class="toggle-label">
-            <span class="moon">🌙</span>
-            <span class="checkbox" aria-hidden="true"></span>
-          </label>
-        </div>
-      </li>
-    </ul>
-  </nav>
-
   <section class="login-container">
     <h2>Login</h2>
     <form class="login-form">
@@ -39,17 +18,28 @@
 
       <button type="submit">Login</button>
     </form>
-    <p class="signup-link">Don’t have an account? <a href="Sign up.html">Sign Up</a></p>
+    <p class="signup-link">Don't have an account? <a href="Sign up.html">Sign Up</a></p>
   </section>
 
   <script>
-    (function() {
-      var toggle = document.getElementById('darkModeToggle');
-      if (!toggle) return;
-      toggle.addEventListener('change', function() {
-        document.body.classList.toggle('dark-mode');
-      });
-    })();
+    // Check for saved dark mode preference and apply it
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    }
+
+    // Handle form submission and redirect
+    document.querySelector('.login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simple validation - in real app you'd validate credentials
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      if (email && password) {
+        // Redirect to main page
+        window.location.href = 'blogs.html';
+      }
+    });
   </script>
 </body>
 </html>

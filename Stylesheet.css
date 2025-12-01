@@ -71,6 +71,7 @@ a {
   font-size: 1.5em;
   font-weight: 700;
   color: #ffffff; /* White text for logo */
+  text-decoration: none;
 }
 
 .logo img {
@@ -86,6 +87,8 @@ a {
   list-style: none;
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .main-nav ul li {
@@ -103,6 +106,7 @@ a {
   border-radius: 25px; 
   position: relative;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 /* Hover: White Bubble + Green Text */
@@ -135,6 +139,66 @@ a {
 
 .main-nav ul li a:hover::after {
   width: 50%; 
+}
+
+/* Toggle Switch Styling */
+.toggle-item {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.toggle-switch {
+  display: inline-flex;
+  align-items: center;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label .moon {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.toggle-label:hover .moon {
+  transform: rotate(15deg);
+}
+
+.toggle-label .checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+input#darkModeToggle:checked + .toggle-label .checkbox {
+  background: white;
+  border-color: white;
+}
+
+input#darkModeToggle:checked + .toggle-label .checkbox::after {
+  content: '✓';
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  color: var(--forest-green);
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /* Dropdown Menu Styles */
@@ -472,20 +536,6 @@ body.dark-mode {
   background-color: #111;
   color: #fff;
 }
-
-body.dark-mode .main-header {
-  background: rgba(20, 20, 20, 0.9) !important;
-  border-bottom: 1px solid #333;
-}
-
-body.dark-mode .main-nav ul li a { color: #eee; }
-body.dark-mode .main-nav ul li a:hover { 
-  background-color: rgba(60, 179, 113, 0.2); 
-  color: var(--leaf-green); 
-}
-body.dark-mode .dropdown-content { background: #222; border: 1px solid #333; }
-body.dark-mode .dropdown-content a { color: #eee; }
-body.dark-mode .dropdown-content a:hover { background: #333; }
 
 body.dark-mode .latest-news {
   box-shadow: none;

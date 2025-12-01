@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukidnon Explorer | Local Tourism Blog</title>
+    <link rel="stylesheet" href="Stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
+            <span>Bukidnon Explorer</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li class="dropdown">
+                    <a href="About.html">ABOUT</a>
+                </li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="#" id="logout-btn">LOG OUT</a></li>
+                <li><a href="#" id="search-icon"><i class="fas fa-search"></i></a></li>
+                <li class="toggle-item">
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <label for="darkModeToggle" class="toggle-label">
+                      <span class="moon">🌙</span>
+                      <span class="checkbox" aria-hidden="true"></span>
+                    </label>
+                  </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div id="search-overlay" class="search-overlay" style="display: none;">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search Bukidnon Explorer!">
+            <button onclick="document.getElementById('search-overlay').style.display='none'">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+
+    <main class="container">
+        <section class="latest-news">
+            <h1>LATEST TRAVEL NEWS</h1>
+            <hr class="title-line">
+            <p class="subtitle">EXPLORE LOCAL GEMS AND HIDDEN SPOTS</p>
+        </section>
+
+        <section class="posts-grid">
+            
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="Nasuli.html">
+                        <img src="https://gttp.images.tshiftcdn.com/470106/x/0/photo-by-nasuli-spring-resort" alt="Nasuli Cold Spring">
+                    </a>
+                </div>
+                <h2 class="post-title">Nasuli: Plunge into the Icy Bliss of Bukidnon's Cold Spring</h2>
+                <div class="post-meta">
+                    <span class="author">By: MARIA REYES</span> | <span class="date">05/10/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="4500">4.5K</span>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="Cedar.html">
+                        <img src="https://www.phtourguide.com/wp-content/uploads/2010/09/CEDAR-Spring-Pool.jpg" alt="CEDAR (Center for Ecological Development and Recreation)">
+                    </a>
+                </div>
+                <h2 class="post-title">CEDAR: Exploring Waterfalls and Trails in a Natural Reserve</h2>
+                <div class="post-meta">
+                    <span class="author">By: JOHN SMITH</span> | <span class="date">06/10/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="3200">3.2K</span>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="Communal.html">
+                        <img src="https://www.escapemanila.com/wp-content/uploads/2023/09/bukidnon-communal-ranch.jpg" alt="Communal Ranch horses and rolling hills">
+                    </a>
+                </div>
+                <h2 class="post-title">Communal Ranch: Bukidnon's Rolling Hills and Horse Country</h2>
+                <div class="post-meta">
+                    <span class="author">By: LARA CRUZ</span> | <span class="date">08/10/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="5800">5.8K</span>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="Dahilayan.html">
+                        <img src="https://pix10.agoda.net/hotelImages/301773/-1/7c172a8869f89606862ab8390a153096.png?ca=0&ce=1&s=1024x768" alt="Dahilayan Adventure Park Zipline">
+                    </a>
+                </div>
+                <h2 class="post-title">Dahilayan Park: Mindanao's Adventure Capital is Calling</h2>
+                <div class="post-meta">
+                    <span class="author">By: MIKE LEE</span> | <span class="date">04/18/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="7100">7.1K</span>
+                </div>
+            </article>
+
+
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="Sabangan.html">
+                        <img src="https://mindtrip.ai/attractions/1d7a/63b2/1f16/4bb8/e20d/0c35/a517/de1c" alt="Sabangan River and Resort">
+                    </a>
+                </div>
+                <h2 class="post-title">Sabangan: The Hidden Rivers and Resorts of Bukidnon</h2>
+                <div class="post-meta">
+                    <span class="author">By: ANNA CHUA</span> | <span class="date">09/20/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="2900">2.9K</span>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="Kipolot.html">
+                        <img src="https://graciestrips.wordpress.com/wp-content/uploads/2016/02/img_1971.jpg?w=1200" alt="Kipolot View Deck in Quezon, Bukidnon">
+                    </a>
+                </div>
+                <h2 class="post-title">Kipolot View Deck: Quezon’s Best Scenic Overlook Spot</h2>
+                <div class="post-meta">
+                    <span class="author">By: VINCE TEE</span> | <span class="date">02/14/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="4000">4.0K</span>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="kaamulan.html">
+                        <img src="https://nojuanisanisland.com/wp-content/uploads/2015/06/0kg.jpg" alt="Kaamulan Park Cultural Site">
+                    </a>
+                </div>
+                <h2 class="post-title">Kaamulan Park: The Cultural Heartbeat of Bukidnon</h2>
+                <div class="post-meta">
+                    <span class="author">By: JANE DOE</span> | <span class="date">03/17/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="6500">6.5K</span>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-image">
+                    <a href="LakeApo.html">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/1f/67/e6/photo0jpg.jpg?w=1200&h=-1&s=1" alt="Kayaking on Lake Apo">
+                    </a>
+                </div>
+                <h2 class="post-title">Lake Apo: Serenity In The Heart of Mindanao</h2>
+                <div class="post-meta">
+                    <span class="author">By: JOHN SMITH</span> | <span class="date">09/19/2025</span>
+                </div>
+                <div class="share-info heart-button">
+                    <i class="fas fa-heart"></i>
+                    <span class="reaction-count" data-initial="3200">3.2K</span>
+                </div>
+            </article>
+            
+        </section>
+
+    </main>
+
+    <script>
+        // Helper: Format numbers (e.g., 4500 -> 4.5K)
+        function formatCount(num) {
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num;
+        }
+
+        // 1. Search Bar Functionality
+        (function() {
+            var searchIcon = document.getElementById('search-icon');
+            var overlay = document.getElementById('search-overlay');
+            var input = document.getElementById('search-input');
+            var header = document.querySelector('.main-header');
+            var postsGrid = document.querySelector('.posts-grid');
+
+            function showOverlay() {
+                var headerH = header ? header.offsetHeight : 70;
+                overlay.style.top = headerH + 'px';
+                overlay.style.display = 'flex';
+                input && input.focus();
+            }
+
+            function hideOverlay() {
+                overlay.style.display = 'none';
+            }
+
+            function performSearch(query) {
+                query = query.toLowerCase().trim();
+                const cards = postsGrid.querySelectorAll('.post-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const title = card.querySelector('.post-title').textContent.toLowerCase();
+                    const author = card.querySelector('.author').textContent.toLowerCase();
+                    
+                    if (query === '' || title.includes(query) || author.includes(query)) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                let noResultsMsg = document.getElementById('no-results-message');
+                if (visibleCount === 0 && query !== '') {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.id = 'no-results-message';
+                        noResultsMsg.style.cssText = 'text-align: center; padding: 40px 20px; font-size: 1.1em; color: #888;';
+                        postsGrid.appendChild(noResultsMsg);
+                    }
+                    noResultsMsg.textContent = `No results found for "${query}". Try searching for a location or author!`;
+                    noResultsMsg.style.display = '';
+                } else if (noResultsMsg) {
+                    noResultsMsg.style.display = 'none';
+                }
+            }
+
+            if (searchIcon) {
+                searchIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (overlay.style.display === 'flex') hideOverlay();
+                    else showOverlay();
+                });
+            }
+
+            if (input) {
+                input.addEventListener('input', function(e) {
+                    performSearch(e.target.value);
+                });
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') hideOverlay();
+                });
+            }
+
+            window.addEventListener('scroll', function() {
+                if (overlay.style.display === 'flex') hideOverlay();
+            }, { passive: true });
+        })();
+
+        // 2. Prevent Page Jump
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            if (link.getAttribute('href').startsWith('#') && link.id !== 'search-icon' && link.id !== 'logout-btn') {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                });
+            }
+        });
+
+        // Handle Logout Button
+        document.getElementById('logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Clear any user session data if needed
+            // localStorage.removeItem('userSession'); // Uncomment if you store user data
+            
+            // Redirect to index.html (landing page)
+            window.location.href = 'index.html';
+        });
+
+        // 3. PERSISTENT HEART BUTTONS (Saves to Browser Storage)
+        document.querySelectorAll('.post-card').forEach(card => {
+            // Find elements within the card
+            const button = card.querySelector('.heart-button');
+            const countSpan = card.querySelector('.reaction-count');
+            const title = card.querySelector('.post-title').textContent.trim(); // Unique Key
+            
+            // Initial Data
+            const initialCount = parseInt(countSpan.getAttribute('data-initial'));
+            
+            // Create a unique key for LocalStorage based on the post title
+            // Removes spaces to make a clean ID, e.g., "liked_Nasuli_..."
+            const storageKey = 'liked_' + title.replace(/\s+/g, '_');
+
+            // Check if user previously liked this specific post
+            const isSaved = localStorage.getItem(storageKey) === 'true';
+            let isLiked = isSaved;
+
+            // --- ON LOAD: Set Initial State ---
+            if (isLiked) {
+                button.classList.add('liked');
+                countSpan.textContent = formatCount(initialCount + 1);
+            } else {
+                button.classList.remove('liked');
+                countSpan.textContent = formatCount(initialCount);
+            }
+
+            // --- ON CLICK: Toggle State & Save ---
+            button.addEventListener('click', function() {
+                isLiked = !isLiked; // Flip state
+
+                if (isLiked) {
+                    // LIKE IT
+                    button.classList.add('liked');
+                    countSpan.textContent = formatCount(initialCount + 1);
+                    localStorage.setItem(storageKey, 'true'); // Save to storage
+                } else {
+                    // UNDO LIKE
+                    button.classList.remove('liked');
+                    countSpan.textContent = formatCount(initialCount);
+                    localStorage.removeItem(storageKey); // Remove from storage
+                }
+            });
+        });
+
+        // 4. Dark Mode Toggle with Persistence
+        (function() {
+            var toggle = document.getElementById('darkModeToggle');
+            if (!toggle) return;
+            
+            // Check for saved dark mode preference or default to light mode
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            
+            // Apply dark mode if previously enabled
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                toggle.checked = true;
+            }
+            
+            // Listen for toggle changes
+            toggle.addEventListener('change', function() {
+                if (this.checked) {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'true');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'false');
+                }
+            });
+        })();
+    </script>
+    
+</body>
+</html>

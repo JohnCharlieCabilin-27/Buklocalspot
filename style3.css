@@ -6,7 +6,7 @@
   --forest-green: #2e8b57;
   --leaf-green: #3cb371;
   --earth-brown: #8b5e3c;
-  --sky-blue: #87ceeb;
+  --sky-blue: #0bff64;
   --text-dark: #2c3e50;
   --text-light: #555;
   --background-light: #f8f9fa;
@@ -176,11 +176,10 @@ input#darkModeToggle:checked + .toggle-label .checkbox::after {
 /* =========================================
    4. FORMS (Sign In / Login)
    ========================================= */
-   
 /* Shared Container Styles */
 .signin-container, .login-container {
   max-width: 400px;
-  margin: 120px auto 50px; 
+  margin: 60px auto 50px; /* Reduced top margin since no navbar */
   padding: 40px 30px;
   background: #ffffff;
   border-radius: 16px;
@@ -262,11 +261,6 @@ input#darkModeToggle:checked + .toggle-label .checkbox::after {
 body.dark-mode {
   background-color: #111;
   color: #eee;
-}
-
-/* Navbar in Dark Mode (Slightly Darker Green) */
-body.dark-mode .navbar {
-  background: rgba(30, 90, 50, 0.95);
 }
 
 /* Form Container in Dark Mode */

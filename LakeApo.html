@@ -8,22 +8,30 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="site-header">
-  <div class="logo">
-     <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
-     </div>
-    <nav class="nav">
+  <header class="main-header">
+    <div class="logo">
+      <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
+      <span>Bukidnon Explorer</span>
+    </div>
+    <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="About.html#contact">Contact</a></li>
+        <li><a href="blogs.html">HOME</a></li>
+        <li class="dropdown">
+          <a href="About.html">ABOUT</a>
+        </li>
+        <li><a href="contact.html">CONTACT US</a></li>
+        <li><a href="#" id="logout-btn">LOG OUT</a></li>
+        <li class="toggle-item">
+          <div class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <label for="darkModeToggle" class="toggle-label">
+              <span class="moon">🌙</span>
+              <span class="checkbox" aria-hidden="true"></span>
+            </label>
+          </div>
+        </li>
       </ul>
     </nav>
-    <div class="toggle-switch">
-      <input type="checkbox" id="darkModeToggle">
-      <label for="darkModeToggle">🌙</label>
-    </div>
   </header>
 
   <!-- HERO SECTION -->
@@ -141,10 +149,27 @@ It is situated approximately 11 kilometers west-southwest of Valencia City's cit
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Dark/Light mode toggle
+    // Dark/Light mode toggle with persistence
     const toggle = document.getElementById('darkModeToggle');
+    
+    // Check for saved dark mode preference
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    // Apply dark mode if previously enabled
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    
+    // Listen for toggle changes
     toggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-mode');
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
     });
   </script>
 </body>

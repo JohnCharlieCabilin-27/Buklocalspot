@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Bukidnon Explorer</title>
+  <link rel="stylesheet" href="Stylesheet.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: white;
+      min-height: 100vh;
+      padding-top: 0;
+      margin: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Static navbar positioning override */
+    .main-header {
+      position: static !important;
+      top: auto !important;
+      margin: 0;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .contact-info {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .contact-form {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 3rem;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-item {
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .info-item i {
+      color: #3cb371;
+      font-size: 1.3rem;
+      min-width: 24px;
+    }
+
+    .social-links {
+      margin-top: 2rem;
+    }
+
+    .social-links h3 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .social-icon.facebook:hover {
+      background: #1877f2;
+    }
+
+    .social-icon.instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .social-icon.twitter:hover {
+      background: #1da1f2;
+    }
+
+    .social-icon.youtube:hover {
+      background: #ff0000;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      color: white;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #3cb371;
+      box-shadow: 0 0 15px rgba(60, 179, 113, 0.3);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(46, 139, 87, 0.4);
+      background: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Success message */
+    .success-message {
+      display: none;
+      background: rgba(76, 175, 80, 0.9);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Map placeholder */
+    .map-container {
+      margin-top: 2rem;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .map-placeholder {
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 2rem;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #2e8b57, #3cb371);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
+      <span>Bukidnon Explorer</span>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="blogs.html">HOME</a></li>
+        <li class="dropdown">
+          <a href="About.html">ABOUT</a>
+        </li>
+        <li><a href="contact.html">CONTACT US</a></li>
+        <li><a href="#" id="logout-btn">LOG OUT</a></li>
+        <li><a href="#" id="search-icon"><i class="fas fa-search"></i></a></li>
+        <li class="toggle-item">
+          <div class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <label for="darkModeToggle" class="toggle-label">
+              <span class="moon">🌙</span>
+              <span class="checkbox" aria-hidden="true"></span>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div id="search-overlay" class="search-overlay" style="display: none;">
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search Bukidnon Explorer!">
+      <button onclick="document.getElementById('search-overlay').style.display='none'">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+    
+    <div class="contact-container">
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h2><i class="fas fa-info-circle"></i> Get In Touch</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; line-height: 1.6;">
+          We'd love to hear from you! Whether you have questions about Bukidnon's amazing destinations, 
+          need travel recommendations, or want to share your own adventure stories, feel free to reach out.
+        </p>
+        
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Location</strong><br>
+            Malaybalay City, Bukidnon, Philippines
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Phone</strong><br>
+            +63 123 456 7890
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong><br>
+            info@bukidnonexplorer.com
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <strong>Response Time</strong><br>
+            Within 24 hours
+          </div>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+          <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon facebook" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon instagram" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon twitter" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon youtube" title="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-container">
+          <div class="map-placeholder">
+            <i class="fas fa-map" style="font-size: 2rem; margin-bottom: 0.5rem;"></i><br>
+            Interactive Map Coming Soon
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2><i class="fas fa-paper-plane"></i> Send Message</h2>
+        
+        <div class="success-message" id="successMessage">
+          <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+        </div>
+        
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">
+              <i class="fas fa-user"></i> Full Name *
+            </label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">
+              <i class="fas fa-envelope"></i> Email Address *
+            </label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">
+              <i class="fas fa-tag"></i> Subject
+            </label>
+            <input type="text" id="subject" name="subject" placeholder="Message subject (optional)">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">
+              <i class="fas fa-comment"></i> Message *
+            </label>
+            <textarea id="message" name="message" placeholder="Tell us about your inquiry, travel plans, or feedback..." required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Back to Top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Search Bar Functionality
+    (function() {
+      var searchIcon = document.getElementById('search-icon');
+      var overlay = document.getElementById('search-overlay');
+      var input = document.getElementById('search-input');
+      var header = document.querySelector('.main-header');
+
+      function showOverlay() {
+        var headerH = header ? header.offsetHeight : 70;
+        overlay.style.top = headerH + 'px';
+        overlay.style.display = 'flex';
+        input && input.focus();
+      }
+
+      function hideOverlay() {
+        overlay.style.display = 'none';
+      }
+
+      if (searchIcon) {
+        searchIcon.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (overlay.style.display === 'flex') hideOverlay();
+          else showOverlay();
+        });
+      }
+
+      if (input) {
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') hideOverlay();
+        });
+      }
+
+      window.addEventListener('scroll', function() {
+        if (overlay.style.display === 'flex') hideOverlay();
+      }, { passive: true });
+    })();
+
+    // Prevent Page Jump
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      if (link.getAttribute('href').startsWith('#') && link.id !== 'search-icon' && link.id !== 'logout-btn') {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+        });
+      }
+    });
+
+    // Handle Logout Button
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Redirect to index.html (landing page)
+        window.location.href = 'index.html';
+      });
+    }
+
+    // Dark/Light mode toggle with persistence
+    const toggle = document.getElementById('darkModeToggle');
+    
+    // Check for saved dark mode preference
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    // Apply dark mode if previously enabled
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    
+    // Listen for toggle changes
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+      }
+    });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const name = formData.get('name').trim();
+      const email = formData.get('email').trim();
+      const subject = formData.get('subject').trim();
+      const message = formData.get('message').trim();
+      
+      // Basic validation
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      
+      // Simulate form submission
+      setTimeout(() => {
+        // Show success message
+        successMessage.classList.add('show');
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 5000);
+        
+        // Scroll to top smoothly
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 1000);
+    });
+
+    // Enhance form inputs with floating labels effect
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', function() {
+        if (!this.value.trim()) {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+      
+      // Check if input has value on load
+      if (input.value.trim()) {
+        input.parentElement.classList.add('focused');
+      }
+    });
+
+    // Add smooth animations on page load
+    window.addEventListener('load', () => {
+      const contactInfo = document.querySelector('.contact-info');
+      const contactForm = document.querySelector('.contact-form');
+      
+      contactInfo.style.opacity = '0';
+      contactForm.style.opacity = '0';
+      contactInfo.style.transform = 'translateX(-50px)';
+      contactForm.style.transform = 'translateX(50px)';
+      
+      setTimeout(() => {
+        contactInfo.style.transition = 'all 0.8s ease';
+        contactForm.style.transition = 'all 0.8s ease';
+        contactInfo.style.opacity = '1';
+        contactForm.style.opacity = '1';
+        contactInfo.style.transform = 'translateX(0)';
+        contactForm.style.transform = 'translateX(0)';
+      }, 100);
+    });
+  </script>
+</body>
+</html>

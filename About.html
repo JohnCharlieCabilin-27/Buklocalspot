@@ -3,32 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nature-Themed Group Portfolio</title>
+  <title>Bukidnon Explorer | About Us</title>
+  <link rel="stylesheet" href="Stylesheet.css" />
   <link rel="stylesheet" href="style2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <header class="main-header">
     <div class="logo">
       <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
       <span>Bukidnon Explorer</span>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#profile">Profiles</a></li>
-      <li><a href="#contact">Contacts</a></li>
-      <li class="toggle-item">
-        <div class="toggle-switch">
-          <input type="checkbox" id="darkModeToggleAbout">
-          <label for="darkModeToggleAbout" class="toggle-label">
-            <span class="moon">🌙</span>
-            <span class="checkbox" aria-hidden="true"></span>
-          </label>
-        </div>
-      </li>
-    </ul>
-  </nav>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="blogs.html">HOME</a></li>
+        <li class="dropdown">
+          <a href="#about">ABOUT</a>
+        </li>
+        <li><a href="contact.html">CONTACT US</a></li>
+        <li><a href="#" id="logout-btn">LOG OUT</a></li>
+        <li><a href="#" id="search-icon"><i class="fas fa-search"></i></a></li>
+        <li class="toggle-item">
+          <div class="toggle-switch">
+            <input type="checkbox" id="darkModeToggleAbout">
+            <label for="darkModeToggleAbout" class="toggle-label">
+              <span class="moon">🌙</span>
+              <span class="checkbox" aria-hidden="true"></span>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div id="search-overlay" class="search-overlay" style="display: none;">
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search Bukidnon Explorer!">
+      <button onclick="document.getElementById('search-overlay').style.display='none'">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
 
   <!-- Animated Leaves -->
   <div class="leaves">
@@ -38,6 +55,99 @@
     <div class="leaf"></div>
     <div class="leaf"></div>
   </div>
+
+  
+
+  <!-- Profile Section -->
+  <section id="profile" class="section profile">
+    <h1>Our Team</h1>
+    <div class="team-container">
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="John Carlo Cabilin" />
+        </div>
+        <div class="member-info">
+          <h3>JOHN CARLO CABILIN</h3>
+          <p class="member-role">LEAD DEVELOPER</p>
+          <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis mollis mauris vel posuere.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face" alt="Maria Santos" />
+        </div>
+        <div class="member-info">
+          <h3>MARIA SANTOS</h3>
+          <p class="member-role">UI/UX DESIGNER</p>
+          <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis mollis mauris vel posuere.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Miguel Rodriguez" />
+        </div>
+        <div class="member-info">
+          <h3>MIGUEL RODRIGUEZ</h3>
+          <p class="member-role">CONTENT WRITER</p>
+          <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis mollis mauris vel posuere.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face" alt="Ana Dela Cruz" />
+        </div>
+        <div class="member-info">
+          <h3>ANA DELA CRUZ</h3>
+          <p class="member-role">PHOTOGRAPHER</p>
+          <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis mollis mauris vel posuere.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <div class="member-photo">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face" alt="Carlos Mendoza" />
+        </div>
+        <div class="member-info">
+          <h3>CARLOS MENDOZA</h3>
+          <p class="member-role">TECHNICAL SUPPORT</p>
+          <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis mollis mauris vel posuere.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- About Section -->
   <section id="about" class="section about">
@@ -51,68 +161,6 @@
     </div>
   </section>
 
-  <!-- Profile Section -->
-  <section id="profile" class="section profile">
-    <h1>Our Profiles</h1>
-    <div class="card">
-      <div class="profile-grid">
-      <div class="profile-card">
-        <div class="card-inner">
-          <img src="profile1.jpg" alt="Member 1" />
-          <h2>Member 1</h2>
-          <p>Front-End Developer | Loves ocean-inspired UI</p>
-        </div>
-      </div>
-      <div class="profile-card">
-        <div class="card-inner">
-          <img src="member2.jpg" alt="Member 2" />
-          <h2>Member 2</h2>
-          <p>Back-End Developer | Builds strong foundations like the earth</p>
-        </div>
-      </div>
-      <div class="profile-card">
-        <div class="card-inner">
-          <img src="member3.jpg" alt="Member 3" />
-          <h2>Member 3</h2>
-          <p>UI/UX Designer | Inspired by forest harmony</p>
-        </div>
-      </div>
-      <div class="profile-card">
-        <div class="card-inner">
-          <img src="member4.jpg" alt="Member 4" />
-          <h2>Member 4</h2>
-          <p>Creative Coder | Loves sky gradients and animations</p>
-        </div>
-      </div>
-      <div class="profile-card">
-        <div class="card-inner">
-          <img src="member5.jpg" alt="Member 5" />
-          <h2>Member 5</h2>
-          <p>Problem Solver | Brings balance like flowing rivers</p>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="card contact-card">
-      <h1>Contact Us</h1>
-      <form class="signin-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your Name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your Email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Your Message" required></textarea>
-
-        <button type="submit" class="btn-primary">Send</button>
-      </form>
-    </div>
-  </section>
   <!-- Back to Top Button -->
   <button id="backToTop" title="Back to top">↑</button>
 
@@ -135,40 +183,92 @@
       });
 
       // Animate target section when nav links are clicked
-      document.querySelectorAll('.navbar a[href^="#"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          var id = this.getAttribute('href').slice(1);
-          var target = document.getElementById(id);
-          if (!target) return;
+      document.querySelectorAll('.main-nav a[href^="#"]').forEach(function(link) {
+        if (link.id !== 'search-icon' && link.id !== 'logout-btn') {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var id = this.getAttribute('href').slice(1);
+            var target = document.getElementById(id);
+            if (!target) return;
 
-          // Remove existing class to allow re-triggering animation
-          target.classList.remove('animate-in');
-          // Force reflow so the animation can restart
-          void target.offsetWidth;
+            // Remove existing class to allow re-triggering animation
+            target.classList.remove('animate-in');
+            // Force reflow so the animation can restart
+            void target.offsetWidth;
 
-          // Calculate target top position accounting for fixed header
-          var headerOffset = 80; // matches scroll-margin-top
-          var elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-          var offsetPosition = elementPosition - headerOffset;
+            // Calculate target top position accounting for fixed header
+            var headerOffset = 80; // matches scroll-margin-top
+            var elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            var offsetPosition = elementPosition - headerOffset;
 
-          // Smooth scroll then add animation class after scrolling finishes
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            // Smooth scroll then add animation class after scrolling finishes
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
 
-          // Use a timeout approx equal to scroll duration to add animation class
-          // (scroll distance varies; 250ms is a reasonable default)
-          setTimeout(function() {
-            target.classList.add('animate-in');
-          }, 250);
-        });
+            // Use a timeout approx equal to scroll duration to add animation class
+            // (scroll distance varies; 250ms is a reasonable default)
+            setTimeout(function() {
+              target.classList.add('animate-in');
+            }, 250);
+          });
+        }
       });
+
+      // Handle Logout Button
+      var logoutBtn = document.getElementById('logout-btn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Redirect to index.html (landing page)
+          window.location.href = 'index.html';
+        });
+      }
+
+      // Search functionality
+      var searchIcon = document.getElementById('search-icon');
+      var overlay = document.getElementById('search-overlay');
+      var input = document.getElementById('search-input');
       
-      // About page dark/light toggle
+      if (searchIcon && overlay && input) {
+        searchIcon.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (overlay.style.display === 'flex') {
+            overlay.style.display = 'none';
+          } else {
+            overlay.style.display = 'flex';
+            input.focus();
+          }
+        });
+
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            overlay.style.display = 'none';
+          }
+        });
+      }
+      
+      // About page dark/light toggle with persistence
       (function() {
         var toggle = document.getElementById('darkModeToggleAbout');
         if (!toggle) return;
+        
+        // Check for saved dark mode preference
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        
+        // Apply dark mode if previously enabled
+        if (isDarkMode) {
+          document.body.classList.add('dark-mode');
+          toggle.checked = true;
+        }
+        
+        // Listen for toggle changes
         toggle.addEventListener('change', function() {
-          document.body.classList.toggle('dark-mode');
+          if (this.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'true');
+          } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'false');
+          }
         });
       })();
     })();
