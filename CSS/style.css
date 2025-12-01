@@ -255,7 +255,7 @@ input#darkModeToggle:checked + .toggle-label .checkbox::after {
 
 .logo img {
   height: 40px;
-  width: auto;
+  width: 40px;
   display: block;
   margin-right: 10px;
   border-radius: 8px; 
@@ -679,7 +679,7 @@ body.dark-mode .external-links-help {
 
 @media (max-width: 768px) {
   .site-header { padding: 10px 20px; }
-  .site-header .logo img { height: 32px; }
+  .site-header .logo img { height: 40px; width: 40px; }
   .hero { height: 45vh; min-height: 220px; }
   .hero .hero-content h1 { font-size: 1.8rem; }
 }

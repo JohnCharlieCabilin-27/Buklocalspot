@@ -4,25 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabangan</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../CSS/Stylesheet.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <!-- HEADER -->
-  <header class="site-header">
-  <div class="logo">
-     <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
-     </div>
-    <nav class="nav">
+  <header class="main-header">
+    <div class="logo">
+      <img src="https://ik.imagekit.io/tvlk/blog/2023/07/shutterstock_1481502635.jpg" alt="Pineapple Logo">
+      <span>Bukidnon Explorer</span>
+    </div>
+    <nav class="main-nav">
       <ul>
-        <li><a href="blogs.html">Home</a></li>
-        <li><a href="About.html">About</a></li>
+        <li><a href="blogs.html">HOME</a></li>
+        <li class="dropdown">
+          <a href="About.html">ABOUT</a>
+        </li>
         <li><a href="contact.html">CONTACT US</a></li>
+        <li><a href="#" id="logout-btn">LOG OUT</a></li>
+        <li class="toggle-item">
+          <div class="toggle-switch">
+            <input type="checkbox" id="darkModeToggle">
+            <label for="darkModeToggle" class="toggle-label">
+              <span class="moon">🌙</span>
+              <span class="checkbox" aria-hidden="true"></span>
+            </label>
+          </div>
+        </li>
       </ul>
     </nav>
-    <div class="toggle-switch">
-      <input type="checkbox" id="darkModeToggle">
-      <label for="darkModeToggle">🌙</label>
-    </div>
   </header>
 
   <!-- HERO SECTION -->
@@ -76,30 +88,30 @@
       <ul style="list-style: square;">
         <li><b>Entry fee</b>: Day-use entrance is ₱50 per person, while overnight entrance is about ₱75.</li>
         <li><b>Tent Space</b>: Guests who camp overnight may rent a tent spot for ~ ₱50.</li>
-        <li><b>Parkinfg Fees</b>: Car parking costs ~₱100 for day tours and ~₱200 for overnight; motorcycles ~₱30 (day) / ₱60 (overnight).</li>
+        <li><b>Parking Fees</b>: Car parking costs ~₱100 for day tours and ~₱200 for overnight; motorcycles ~₱30 (day) / ₱60 (overnight).</li>
         <li><b>Opening hours</b>: Best visited during daytime for clear views, with many staying overnight to experience camping and sunrise.</li>
       </ul>
 
       <!-- EMBEDDED CONTENT SECTION -->
       <div class="embedded-content-section">
         <h2><strong>EXPLORE MORE</strong></h2>
-        <div class="external-links-grid">
-          <a href="https://vismin.ph/2025/sabangan-can-ayan-guide/" target="_blank" class="external-link-card">
-            <img src="https://lazycamper.ph/wp-content/uploads/2024/03/DSCF4506-scaled.webp" alt="Sabangan Travel Guide">
+        <div class="external-links-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;">
+          <a href="https://vismin.ph/2025/sabangan-can-ayan-guide/" target="_blank" class="external-link-card" style="position: relative; display: block; border-radius: 12px; overflow: hidden; height: 180px; transition: transform 0.3s ease;">
+            <img src="https://lazycamper.ph/wp-content/uploads/2024/03/DSCF4506-scaled.webp" alt="Sabangan Travel Guide" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="link-overlay">
               <span class="link-icon">🔗</span>
               <p>Visit Site</p>
             </div>
           </a>
-          <a href="https://www.google.com/maps/place/Sabangan/@8.0008315,125.1265311,17z/" target="_blank" class="external-link-card">
-            <img src="Sabangan map.png" alt="Google Maps Location">
+          <a href="https://www.google.com/maps/place/Sabangan/@8.0008315,125.1265311,17z/" target="_blank" class="external-link-card" style="position: relative; display: block; border-radius: 12px; overflow: hidden; height: 180px; transition: transform 0.3s ease;">
+            <img src="../IMAGES/Sabangan map.png" alt="Google Maps Location" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="link-overlay">
               <span class="link-icon">📍</span>
               <p>Google Maps</p>
             </div>
           </a>
-          <a href="https://thelonebukidnontraveler.blogspot.com/2013/11/a-trip-to-sabangan.html" target="_blank" class="external-link-card" title="Add your external link here">
-            <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t39.30808-6/484638338_1114656180463913_2342104991446712312_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGdza-H367tlwkKH_SiUftgpDJwAGLRD6SkMnAAYtEPpC9Y8DZuF5KJCcNoEYbEz3-PNe9Jha-EBbCt5DOYrNql&_nc_ohc=GHpABnVrSqQQ7kNvwFvslC-&_nc_oc=AdlbN3jJlM7SwDyF6F2GwEiCJ4Rqx-8sD8UBwLRwtc7SBy36UMNZlkofGWDnlwtVEAo&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&_nc_gid=TIKXihhdSlS-IGrdk6KNPA&oh=00_AfhuTgKZ45vLX5CtACZyrNBu-Xet6elhOUL5nv2Spr6XFA&oe=6926134F" alt="Add External Link">
+          <a href="https://thelonebukidnontraveler.blogspot.com/2013/11/a-trip-to-sabangan.html" target="_blank" class="external-link-card" style="position: relative; display: block; border-radius: 12px; overflow: hidden; height: 180px; transition: transform 0.3s ease;" title="Add your external link here">
+            <img src="https://scontent.fcgy1-3.fna.fbcdn.net/v/t39.30808-6/484638338_1114656180463913_2342104991446712312_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGdza-H367tlwkKH_SiUftgpDJwAGLRD6SkMnAAYtEPpC9Y8DZuF5KJCcNoEYbEz3-PNe9Jha-EBbCt5DOYrNql&_nc_ohc=GHpABnVrSqQQ7kNvwFvslC-&_nc_oc=AdlbN3jJlM7SwDyF6F2GwEiCJ4Rqx-8sD8UBwLRwtc7SBy36UMNZlkofGWDnlwtVEAo&_nc_zt=23&_nc_ht=scontent.fcgy1-3.fna&_nc_gid=TIKXihhdSlS-IGrdk6KNPA&oh=00_AfhuTgKZ45vLX5CtACZyrNBu-Xet6elhOUL5nv2Spr6XFA&oe=6926134F" alt="Add External Link" style="width: 100%; height: 100%; object-fit: cover;">
             <div class="link-overlay">
               <span class="link-icon">🔗</span>
               <p>Visit Site</p>
@@ -140,6 +152,15 @@
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Handle Logout Button
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'index.html';
+      });
+    }
 
     // Dark/Light mode toggle with persistence
     const toggle = document.getElementById('darkModeToggle');
