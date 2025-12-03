@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kipolot View Deck
   </title>
+  <link rel="stylesheet" href="Stylesheet.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,8 +27,8 @@
           <div class="toggle-switch">
             <input type="checkbox" id="darkModeToggle">
             <label for="darkModeToggle" class="toggle-label">
+              <span class="sun">☀️</span>
               <span class="moon">🌙</span>
-              <span class="checkbox" aria-hidden="true"></span>
             </label>
           </div>
         </li>
@@ -168,27 +169,30 @@
     }
 
     // Dark/Light mode toggle with persistence
-    const toggle = document.getElementById('darkModeToggle');
-    
-    // Check for saved dark mode preference
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    
-    // Apply dark mode if previously enabled
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-      toggle.checked = true;
-    }
-    
-    // Listen for toggle changes
-    toggle.addEventListener('change', () => {
-      if (toggle.checked) {
+    (function() {
+      var toggle = document.getElementById('darkModeToggle');
+      if (!toggle) return;
+      
+      // Check for saved dark mode preference
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      
+      // Apply dark mode if previously enabled
+      if (isDarkMode) {
         document.body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'true');
-      } else {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'false');
+        toggle.checked = true;
       }
-    });
+      
+      // Listen for toggle changes
+      toggle.addEventListener('change', function() {
+        if (this.checked) {
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('darkMode', 'true');
+        } else {
+          document.body.classList.remove('dark-mode');
+          localStorage.setItem('darkMode', 'false');
+        }
+      });
+    })();
   </script>
 </body>
 </html>

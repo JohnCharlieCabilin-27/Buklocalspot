@@ -81,6 +81,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            margin-right: 0px;
         }
 
         .nav-btn {
@@ -129,45 +130,47 @@
         .toggle-label {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
             cursor: pointer;
             user-select: none;
+            position: relative;
+            width: 24px;
+            height: 24px;
+        }
+
+        .toggle-label .sun,
+        .toggle-label .moon {
+            font-size: 20px;
+            line-height: 1;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .toggle-label .sun {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
         }
 
         .toggle-label .moon {
-            font-size: 18px;
-            line-height: 1;
-            transition: transform 0.3s ease;
-            color: white;
+            opacity: 0;
+            transform: rotate(180deg) scale(0.8);
         }
 
+        input#darkModeToggle:checked + .toggle-label .sun {
+            opacity: 0;
+            transform: rotate(-180deg) scale(0.8);
+        }
+
+        input#darkModeToggle:checked + .toggle-label .moon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .toggle-label:hover .sun,
         .toggle-label:hover .moon {
-            transform: rotate(15deg);
-        }
-
-        .toggle-label .checkbox {
-            width: 18px;
-            height: 18px;
-            border: 2px solid rgba(255,255,255,0.6);
-            border-radius: 4px;
-            display: inline-block;
-            position: relative;
-            transition: all 0.2s ease;
-        }
-
-        input#darkModeToggle:checked + .toggle-label .checkbox {
-            background: white;
-            border-color: white;
-        }
-
-        input#darkModeToggle:checked + .toggle-label .checkbox::after {
-            content: '✓';
-            position: absolute;
-            left: 2px;
-            top: -2px;
-            color: var(--forest-green);
-            font-size: 14px;
-            font-weight: bold;
+            transform: scale(1.1);
         }
 
         /* =========================================
@@ -446,6 +449,46 @@
         }
 
         /* =========================================
+           BACK TO TOP BUTTON
+           ========================================= */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--forest-green), var(--leaf-green));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        #backToTop:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
+            background: linear-gradient(135deg, var(--leaf-green), var(--forest-green));
+        }
+
+        body.dark-mode #backToTop {
+            background: linear-gradient(135deg, #1a6343, #2e8b57);
+            box-shadow: 0 4px 15px rgba(26, 99, 67, 0.4);
+        }
+
+        body.dark-mode #backToTop:hover {
+            background: linear-gradient(135deg, #2e8b57, #3cb371);
+            box-shadow: 0 8px 25px rgba(26, 99, 67, 0.6);
+        }
+
+        /* =========================================
            ANIMATIONS
            ========================================= */
         @keyframes pageFadeIn {
@@ -517,8 +560,8 @@
                 <div class="toggle-switch">
                     <input type="checkbox" id="darkModeToggle">
                     <label for="darkModeToggle" class="toggle-label">
+                        <span class="sun">☀️</span>
                         <span class="moon">🌙</span>
-                        <span class="checkbox" aria-hidden="true"></span>
                     </label>
                 </div>
             </div>
@@ -596,6 +639,9 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to top">↑</button>
+
     <script>
         // Dark Mode Toggle with Persistence
         (function() {
@@ -620,6 +666,26 @@
                     document.body.classList.remove('dark-mode');
                     localStorage.setItem('darkMode', 'false');
                 }
+            });
+        })();
+
+        // Back to Top Button Functionality
+        (function() {
+            var btn = document.getElementById('backToTop');
+            if (!btn) return;
+
+            // Show button after scrolling down 300px
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btn.style.display = 'flex';
+                } else {
+                    btn.style.display = 'none';
+                }
+            });
+
+            // Smooth scroll to top on click
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         })();
 

@@ -180,14 +180,11 @@ a {
   display: inline-flex;
   align-items: center;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .toggle-switch:hover {
-  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
 }
 
@@ -198,52 +195,44 @@ a {
 .toggle-label {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  position: relative;
   cursor: pointer;
   user-select: none;
 }
 
+.toggle-label .sun,
 .toggle-label .moon {
   font-size: 20px;
   line-height: 1;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   color: white;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  position: absolute;
 }
 
+.toggle-label .sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.toggle-label .moon {
+  opacity: 0;
+  transform: rotate(180deg) scale(0.5);
+}
+
+.toggle-switch input:checked + .toggle-label .sun {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+}
+
+.toggle-switch input:checked + .toggle-label .moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.toggle-label:hover .sun,
 .toggle-label:hover .moon {
   transform: rotate(15deg) scale(1.1);
-}
-
-.toggle-label .checkbox {
-  width: 20px;
-  height: 20px;
-  border: 2px solid rgba(255,255,255,0.7);
-  border-radius: 6px;
-  display: inline-block;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.1);
-}
-  border-radius: 4px;
-  display: inline-block;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-input#darkModeToggle:checked + .toggle-label .checkbox {
-  background: white;
-  border-color: white;
-}
-
-input#darkModeToggle:checked + .toggle-label .checkbox::after {
-  content: '✓';
-  position: absolute;
-  left: 2px;
-  top: -2px;
-  color: var(--forest-green);
-  font-size: 14px;
-  font-weight: bold;
 }
 
 /* Dropdown Menu Styles */
@@ -285,33 +274,40 @@ input#darkModeToggle:checked + .toggle-label .checkbox::after {
 .toggle-item { display: flex; align-items: center; margin-left: 20px;}
 .toggle-switch { display: inline-flex; align-items: center; }
 .toggle-switch input { display: none; }
-.toggle-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+.toggle-label { display: inline-flex; align-items: center; position: relative; cursor: pointer; user-select: none; }
 
-.toggle-label .moon { font-size: 18px; line-height: 1; transition: transform 0.3s ease; color: white; }
-.toggle-label:hover .moon { transform: rotate(15deg); }
-
-.toggle-label .checkbox {
-  width: 18px;
-  height: 18px;
-  border: 2px solid rgba(255,255,255,0.6); 
-  border-radius: 4px;
-  display: inline-block;
-  position: relative;
-  transition: all 0.2s ease;
-}
-
-input#darkModeToggle:checked + .toggle-label .checkbox {
-  background: white;
-  border-color: white;
-}
-input#darkModeToggle:checked + .toggle-label .checkbox::after {
-  content: '\2713';
+.toggle-label .sun,
+.toggle-label .moon { 
+  font-size: 18px; 
+  line-height: 1; 
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+  color: white; 
   position: absolute;
-  left: 2px;
-  top: -2px;
-  color: var(--forest-green);
-  font-size: 14px;
-  font-weight: bold;
+}
+
+.toggle-label .sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.toggle-label .moon {
+  opacity: 0;
+  transform: rotate(180deg) scale(0.5);
+}
+
+.toggle-switch input:checked + .toggle-label .sun {
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+}
+
+.toggle-switch input:checked + .toggle-label .moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.toggle-label:hover .sun,
+.toggle-label:hover .moon { 
+  transform: rotate(15deg) scale(1.1); 
 }
 
 /* =========================================

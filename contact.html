@@ -369,29 +369,41 @@
     }
 
     /* Back to top button */
-    .back-to-top {
+    #backToTop {
       position: fixed;
       bottom: 30px;
       right: 30px;
       width: 50px;
       height: 50px;
       background: linear-gradient(135deg, #2e8b57, #3cb371);
+      color: white;
       border: none;
       border-radius: 50%;
-      color: white;
+      font-size: 20px;
+      font-weight: bold;
       cursor: pointer;
       display: none;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
       transition: all 0.3s ease;
       z-index: 1000;
     }
 
-    .back-to-top:hover {
+    #backToTop:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
+      background: linear-gradient(135deg, #3cb371, #2e8b57);
+    }
+
+    body.dark-mode #backToTop {
+      background: linear-gradient(135deg, #1a6343, #2e8b57);
+      box-shadow: 0 4px 15px rgba(26, 99, 67, 0.4);
+    }
+
+    body.dark-mode #backToTop:hover {
+      background: linear-gradient(135deg, #2e8b57, #3cb371);
+      box-shadow: 0 8px 25px rgba(26, 99, 67, 0.6);
     }
   </style>
 </head>
@@ -413,10 +425,10 @@
         <li><a href="#" id="search-icon"><i class="fas fa-search"></i></a></li>
         <li class="toggle-item">
           <div class="toggle-switch">
-            <input type="checkbox" id="darkModeToggle">
-            <label for="darkModeToggle" class="toggle-label">
+            <input type="checkbox" id="darkModeToggleContact">
+            <label for="darkModeToggleContact" class="toggle-label">
+              <span class="sun">☀️</span>
               <span class="moon">🌙</span>
-              <span class="checkbox" aria-hidden="true"></span>
             </label>
           </div>
         </li>
@@ -552,19 +564,28 @@
   </main>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+  <button id="backToTop" title="Back to top">↑</button>
 
   <script>
     // Back to Top button
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+
+      // Show button after scrolling down 300px
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          btn.style.display = 'flex';
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+
+      // Smooth scroll to top on click
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
 
     // Search Bar Functionality
     (function() {
@@ -623,27 +644,29 @@
     }
 
     // Dark/Light mode toggle with persistence
-    const toggle = document.getElementById('darkModeToggle');
+    const toggle = document.getElementById('darkModeToggleContact');
     
-    // Check for saved dark mode preference
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    
-    // Apply dark mode if previously enabled
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-      toggle.checked = true;
-    }
-    
-    // Listen for toggle changes
-    toggle.addEventListener('change', () => {
-      if (toggle.checked) {
+    if (toggle) {
+      // Check for saved dark mode preference
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      
+      // Apply dark mode if previously enabled
+      if (isDarkMode) {
         document.body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'true');
-      } else {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'false');
+        toggle.checked = true;
       }
-    });
+      
+      // Listen for toggle changes
+      toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('darkMode', 'true');
+        } else {
+          document.body.classList.remove('dark-mode');
+          localStorage.setItem('darkMode', 'false');
+        }
+      });
+    }
 
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
