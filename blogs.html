@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="Stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            opacity: 0;
+            animation: pageFadeIn 0.8s cubic-bezier(.2,.8,.2,1) 1 forwards;
+        }
+        
+        .latest-news h1 {
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .latest-news .subtitle {
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .posts-grid {
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: none; }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
 
